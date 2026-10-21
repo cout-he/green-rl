@@ -10,7 +10,7 @@
 
 - 论文：Chen et al. (2025), *GAS-MARL: Green-Aware job Scheduling algorithm for HPC clusters based on Multi-Action Deep Reinforcement Learning*, FGCS 167, 107760, DOI `10.1016/j.future.2025.107760`。
 - 作者仓库：https://github.com/sioncr/green-rl-sched
-- 参考作者版本：`0d89df599ffe092bdd8bfb0c86a0628e58833bde`。本地下载文件须进行哈希比对后才能认定与该版本一致。
+- 参考作者版本：`0d89df599ffe092bdd8bfb0c86a0628e58833bde`。已获取作者 Git 历史；`git diff --ignore-space-at-eol upstream/main upstream-import` 无差异，确认原始下载内容与此版本一致（忽略行末换行格式差异）。数据的独立 SHA256 清单见 `research/dataset_manifest.json`。
 - 本地原始导入：Git tag `upstream-import`。工程修复和研究改动均保留差异。
 - 本项目远程：https://github.com/cout-he/green-rl
 - 用户提供的论文仅本地阅读，不提交全文 PDF。
