@@ -16,3 +16,4 @@ __pycache__/
 /.research.lock
 /research/LATEST_RUN.json
 /reports/_qa/
+/reports/qa_dissection/

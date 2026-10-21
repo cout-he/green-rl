@@ -28,3 +28,10 @@
 - 第一轮只执行 Lublin-256、Green-Backfilling 和一个训练种子；先完成基础复现，再扩展三数据集、其他回填策略和多种子。
 - 作者模式训练后在 paper 模式评测仅用于语义敏感性分析，不称为新算法或经过独立训练的改进。
 - 附近工作目前只完成初步检索，创新候选须进一步核查全文，不能预先声称新颖。
+
+## 实际运行状态
+
+- `gas-marl-20261021-smoke-01`：CUDA 的 MARL 训练、PPO 训练、author 评测、paper 评测四步均退出0；每训练1轮2轨迹，评测1段64作业。这只证明完整链条可以执行，汇总见 `smoke_summary.json`。
+- `gas-marl-20261021-baseline-01`：北京时间10:46启动，本次前置smoke已通过，进入300轮GAS-MARL训练；随后自动训练PPO并做10段1024作业评测。完整数值结论待产出。
+- 当前聊天已创建15分钟 heartbeat，automation id为 `gas-marl`，只在完成、失败、需用户行动或实质科研发现时通知。以实际进程与日志为准，禁止重复启动。
+- 报告 `reports/拆解报告_GAS_MARL.docx` 已完成四页视觉核查；标准renderer缺LibreOffice，替代用独立隐藏Word实例导出PDF后由bundled pypdfium2渲染，无裁切/重叠/空白页或表格断裂。QA中间产物不提交。
