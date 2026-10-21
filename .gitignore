@@ -1,0 +1,16 @@
+/.venv/
+/.runtime/
+/.cache/
+/results/
+/lublin_256/
+/Cirne/
+/Jann/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.pkl
+*.pt
+*.pth
+*.log
+*.tmp
+/.research.lock

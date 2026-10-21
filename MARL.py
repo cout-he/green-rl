@@ -2,6 +2,8 @@
 import os
 
 import csv
+import json
+import random
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -10,6 +12,22 @@ from torch.distributions import Categorical
 from torch.utils.data.sampler import BatchSampler, SubsetRandomSampler
 import scipy.signal
 from HPCSimPickJobs import *
+
+
+def configure_runtime(seed=0, device='auto', num_threads=1):
+    """Seed all sampling sources and explicitly select the execution device."""
+    if num_threads is not None:
+        if num_threads < 1:
+            raise ValueError("num_threads must be positive")
+        torch.set_num_threads(num_threads)
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+    if device == 'auto':
+        device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    return torch.device(device)
 
 class Buffer():
     def __init__(self):
@@ -430,17 +448,16 @@ class PPO():
                 self.critic_net_optimizer.step()
 
     def save_using_model_name(self, model_name_path):
-        if not os.path.exists(model_name_path):
-            os.makedirs(model_name_path)
-        torch.save(self.actor_net.state_dict(), model_name_path + "_actor.pkl")
+        os.makedirs(model_name_path, exist_ok=True)
+        torch.save(self.actor_net.state_dict(), os.path.join(model_name_path, "_actor.pkl"))
         torch.save(self.critic_net.state_dict(),
-                   model_name_path + "_critic.pkl")
+                   os.path.join(model_name_path, "_critic.pkl"))
 
     def load_using_model_name(self, model_name_path):
         self.actor_net.load_state_dict(
-            torch.load(model_name_path + "_actor.pkl"))
+            torch.load(os.path.join(model_name_path, "_actor.pkl"), map_location=self.device))
         self.critic_net.load_state_dict(
-            torch.load(model_name_path + "_critic.pkl"))
+            torch.load(os.path.join(model_name_path, "_critic.pkl"), map_location=self.device))
 
     def eval_action(self,o,mask1,mask2):
         with torch.no_grad():
@@ -461,10 +478,13 @@ class PPO():
 
         return ac1, ac2
 
-def train(workload,backfill):
-    seed = 0
-    epochs = 300
-    traj_num = 100
+def train(workload, backfill, epochs=300, traj_num=100, seed=0, output_dir=None,
+          device='auto', num_threads=1):
+    if epochs < 1:
+        raise ValueError("epochs must be positive")
+    if traj_num < 1:
+        raise ValueError("traj_num must be positive")
+    device = configure_runtime(seed, device, num_threads)
     env = HPCEnv(backfill=backfill)
     env.seed(seed)
     current_dir = os.getcwd()
@@ -472,8 +492,8 @@ def train(workload,backfill):
     workload_file = os.path.join(current_dir, "./data/" + workload_name + ".swf")
     env.my_init(workload_file=workload_file)
 
-    use_cuda = torch.cuda.is_available()
-    device = torch.device("cuda" if use_cuda else "cpu")
+    output_dir = os.fspath(output_dir) if output_dir is not None else os.path.join(workload_name, 'MARL')
+    os.makedirs(output_dir, exist_ok=True)
 
     inputNum_size = [MAX_QUEUE_SIZE, run_win, green_win]
     featureNum_size = [JOB_FEATURES, RUN_FEATURE, GREEN_FEATURE]
@@ -530,14 +550,20 @@ def train(workload,backfill):
                     break
 
         ppo.train()
-        with open('MARL_'+workload_name+'.csv', mode='a',
+        with open(os.path.join(output_dir, 'MARL_'+workload_name+'.csv'), mode='a',
                   newline='') as file:
             writer = csv.writer(file)
             writer.writerow(
                 [float(epoch_reward / traj_num), float(green_reward / traj_num), float(wait_reward / traj_num)])
         ppo.buffer.clear_buffer()
+        print(json.dumps({"event": "epoch", "algorithm": "MARL", "epoch": epoch + 1,
+                          "epochs": epochs, "traj_num": traj_num, "seed": seed,
+                          "backfill": backfill, "device": str(device),
+                          "reward": float(epoch_reward / traj_num),
+                          "renewable_energy_utilization": float(green_reward / traj_num),
+                          "average_bounded_slowdown": float(-wait_reward / traj_num)}), flush=True)
 
-    ppo.save_using_model_name(workload_name + '/MARL/')
+    ppo.save_using_model_name(output_dir)
 
 
 
@@ -546,5 +572,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--workload', type=str, default='lublin_256')
     parser.add_argument('--backfill', type=int, default=0)
+    parser.add_argument('--epochs', type=int, default=300)
+    parser.add_argument('--traj-num', type=int, default=100)
+    parser.add_argument('--seed', type=int, default=0)
+    parser.add_argument('--output-dir', default=None)
+    parser.add_argument('--device', default='auto')
+    parser.add_argument('--num-threads', type=int, default=1)
     args = parser.parse_args()
-    train(args.workload, args.backfill)
+    train(args.workload, args.backfill, args.epochs, args.traj_num, args.seed,
+          args.output_dir, args.device, args.num_threads)
