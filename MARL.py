@@ -12,6 +12,7 @@ from torch.distributions import Categorical
 from torch.utils.data.sampler import BatchSampler, SubsetRandomSampler
 import scipy.signal
 from HPCSimPickJobs import *
+from training_checkpoint import save_checkpoint, load_checkpoint
 
 
 def configure_runtime(seed=0, device='auto', num_threads=1):
@@ -479,11 +480,13 @@ class PPO():
         return ac1, ac2
 
 def train(workload, backfill, epochs=300, traj_num=100, seed=0, output_dir=None,
-          device='auto', num_threads=1):
+          device='auto', num_threads=1, checkpoint_every=5, resume=None):
     if epochs < 1:
         raise ValueError("epochs must be positive")
     if traj_num < 1:
         raise ValueError("traj_num must be positive")
+    if checkpoint_every < 0:
+        raise ValueError("checkpoint_every must be zero or positive")
     device = configure_runtime(seed, device, num_threads)
     env = HPCEnv(backfill=backfill)
     env.seed(seed)
@@ -499,7 +502,23 @@ def train(workload, backfill, epochs=300, traj_num=100, seed=0, output_dir=None,
     featureNum_size = [JOB_FEATURES, RUN_FEATURE, GREEN_FEATURE]
     ppo = PPO(batch_size=256, inputNum_size=inputNum_size,
               featureNum_size=featureNum_size, device=device)
-    for epoch in range(epochs):
+    csv_path = os.path.join(output_dir, 'MARL_' + workload_name + '.csv')
+    checkpoint_path = os.path.join(output_dir, 'checkpoint.pt')
+    metadata = {'algorithm': 'MARL', 'workload': workload, 'backfill': backfill,
+                'seed': seed, 'eta': eta, 'windows': inputNum_size,
+                'features': featureNum_size, 'traj_num': traj_num,
+                'semantics': env.delay_semantics, 'delay_max_jobs': delayMaxJobNum,
+                'delay_times': list(delayTimeList), 'gamma': ppo.gamma, 'lam': ppo.lam,
+                'clip': ppo.clip_param, 'updates': ppo.ppo_update_time,
+                'batch_size': ppo.batch_size}
+    start_epoch = load_checkpoint(resume, ppo, metadata, env=env, csv_path=csv_path) if resume else 0
+    if start_epoch > epochs:
+        raise ValueError('Checkpoint has more completed epochs than requested total epochs')
+    if resume:
+        print(json.dumps({'event': 'resume', 'algorithm': 'MARL',
+                          'completed_epoch': start_epoch, 'epochs': epochs,
+                          'checkpoint': os.fspath(resume)}), flush=True)
+    for epoch in range(start_epoch, epochs):
         o, r, d, ep_ret, ep_len, show_ret, sjf, f1, greenRwd = env.reset(), 0, False, 0, 0, 0, 0, 0, 0
         running_num = 0
         t = 0
@@ -550,12 +569,14 @@ def train(workload, backfill, epochs=300, traj_num=100, seed=0, output_dir=None,
                     break
 
         ppo.train()
-        with open(os.path.join(output_dir, 'MARL_'+workload_name+'.csv'), mode='a',
+        with open(csv_path, mode='a',
                   newline='') as file:
             writer = csv.writer(file)
             writer.writerow(
                 [float(epoch_reward / traj_num), float(green_reward / traj_num), float(wait_reward / traj_num)])
         ppo.buffer.clear_buffer()
+        if checkpoint_every and ((epoch + 1) % checkpoint_every == 0 or epoch + 1 == epochs):
+            save_checkpoint(checkpoint_path, ppo, epoch + 1, metadata, env=env, csv_path=csv_path)
         print(json.dumps({"event": "epoch", "algorithm": "MARL", "epoch": epoch + 1,
                           "epochs": epochs, "traj_num": traj_num, "seed": seed,
                           "backfill": backfill, "device": str(device),
@@ -578,6 +599,12 @@ if __name__ == "__main__":
     parser.add_argument('--output-dir', default=None)
     parser.add_argument('--device', default='auto')
     parser.add_argument('--num-threads', type=int, default=1)
+    parser.add_argument('--checkpoint-every', type=int, default=5,
+                        help='Save complete training state every N epochs; 0 disables checkpoints')
+    parser.add_argument('--resume', default=None, help='Resume a complete trusted training checkpoint')
     args = parser.parse_args()
-    train(args.workload, args.backfill, args.epochs, args.traj_num, args.seed,
-          args.output_dir, args.device, args.num_threads)
+    train_args = (args.workload, args.backfill, args.epochs, args.traj_num, args.seed,
+                  args.output_dir, args.device, args.num_threads)
+    if args.checkpoint_every != 5 or args.resume is not None:
+        train_args += (args.checkpoint_every, args.resume)
+    train(*train_args)

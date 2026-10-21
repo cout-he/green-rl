@@ -10,6 +10,7 @@ import io
 import json
 import os
 from pathlib import Path
+import signal
 import subprocess
 import sys
 import time
@@ -30,6 +31,25 @@ def write_json(path, data):
     os.replace(temporary, path)
 
 
+def terminate_tree(child):
+    """Windows venv launchers have a separate interpreter child; stop both."""
+    if os.name == "nt":
+        termination = subprocess.run(["taskkill", "/PID", str(child.pid), "/T", "/F"],
+                                     capture_output=True, check=False)
+        if child.poll() is None:
+            child.kill()
+        if termination.returncode:
+            child.wait()
+            raise RuntimeError("Could not confirm process-tree termination: " +
+                               termination.stderr.decode(errors="replace").strip())
+    else:
+        try:
+            os.killpg(child.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+    child.wait()
+
+
 def execute_step(name, command, cwd, log_dir, timeout, expected=(), env=None, on_update=None):
     """A failed process or missing/empty artifact never counts as completed."""
     log_dir = Path(log_dir)
@@ -40,7 +60,8 @@ def execute_step(name, command, cwd, log_dir, timeout, expected=(), env=None, on
               "stdout": str(stdout_path), "stderr": str(stderr_path)}
     started = time.monotonic()
     with stdout_path.open("wb") as out, stderr_path.open("wb") as err:
-        child = subprocess.Popen(command, cwd=cwd, env=env, stdout=out, stderr=err)
+        child = subprocess.Popen(command, cwd=cwd, env=env, stdout=out, stderr=err,
+                                 start_new_session=(os.name != "nt"))
         result["pid"] = child.pid
         try:
             while child.poll() is None:
@@ -49,14 +70,12 @@ def execute_step(name, command, cwd, log_dir, timeout, expected=(), env=None, on
                 if on_update:
                     on_update(dict(result))
                 if elapsed >= timeout:
-                    child.kill()
-                    child.wait()
+                    terminate_tree(child)
                     result["status"] = "timed_out"
                     break
                 time.sleep(min(2, max(0.01, timeout - elapsed)))
         except BaseException:
-            child.kill()
-            child.wait()
+            terminate_tree(child)
             raise
         result["returncode"] = child.wait()
     if result["status"] != "timed_out":
@@ -101,11 +120,31 @@ def dataset_manifest():
             for p in sorted((ROOT / "data").iterdir()) if p.is_file()]
 
 
+def verify_resume_provenance(previous):
+    """A seed and workload name do not establish unchanged input or simulation code."""
+    previous = Path(previous)
+    recorded_data = json.loads((previous / "datasets.json").read_text(encoding="utf-8"))
+    if recorded_data != dataset_manifest():
+        raise ValueError("Resume data differs from the recorded run")
+    manifest = json.loads((previous / "source_manifest.json").read_text(encoding="utf-8"))
+    checked = 0
+    for relative, digest in manifest.items():
+        name = Path(relative)
+        relevant = (name.suffix == ".py" and len(name.parts) == 1) or name.as_posix() == "configFile/config.ini"
+        if relevant:
+            source = ROOT / name
+            if not source.is_file() or hashlib.sha256(source.read_bytes()).hexdigest() != digest:
+                raise ValueError("Resume source differs: " + relative)
+            checked += 1
+    if not checked:
+        raise ValueError("Resume source manifest has no training implementation")
+
+
 def capture_source(run_dir):
     """Preserve the actual executed source, including uncommitted additions."""
     run_dir = Path(run_dir)
     manifest = {}
-    patterns = ["*.py", "requirements*.txt", "configFile/*.ini", "scripts/*.py", "tests/*.py"]
+    patterns = ["*.py", "requirements*.txt", "configFile/*.ini", "scripts/*.py", "scripts/*.ps1", "tests/*.py"]
     for pattern in patterns:
         for source in sorted(ROOT.glob(pattern)):
             relative = source.relative_to(ROOT)
@@ -127,9 +166,23 @@ def main(argv=None):
     parser.add_argument("--num-threads", type=int, default=1)
     parser.add_argument("--timeout-hours", type=float, default=12)
     parser.add_argument("--run-id", default=datetime.now().strftime("%Y%m%d-%H%M%S"))
+    parser.add_argument("--checkpoint-every", type=int, default=5,
+                        help="Save complete training state every N epochs (0 disables periodic saves)")
+    parser.add_argument("--resume-from", type=Path,
+                        help="Previous run directory; resume available full-baseline checkpoints only")
     args = parser.parse_args(argv)
     if args.num_threads < 1 or args.timeout_hours <= 0:
         parser.error("num-threads and timeout-hours must be positive")
+    if args.checkpoint_every < 0:
+        parser.error("checkpoint-every must be >= 0")
+    if args.resume_from is not None:
+        if args.stage == "smoke" or not args.resume_from.is_dir():
+            parser.error("resume-from requires a previous run directory and baseline/all stage")
+        args.resume_from = str(args.resume_from.resolve())
+        try:
+            verify_resume_provenance(args.resume_from)
+        except (OSError, ValueError) as exc:
+            parser.error(str(exc))
     if not args.run_id or Path(args.run_id).name != args.run_id or args.run_id in {".", ".."}:
         parser.error("run-id must be a single directory name")
     run_dir = ROOT / "results" / args.run_id
@@ -181,11 +234,20 @@ def main(argv=None):
                             command = [sys.executable, "-X", "utf8", str(ROOT / script), *common,
                                        "--epochs", "1" if stage == "smoke" else "300",
                                        "--traj-num", "2" if stage == "smoke" else "100",
-                                       "--output-dir", str(output)]
+                                       "--output-dir", str(output),
+                                       "--checkpoint-every", str(args.checkpoint_every)]
+                            checkpoint = None
+                            if stage == "baseline" and args.resume_from is not None:
+                                candidate = Path(args.resume_from) / "baseline" / workload / ("seed_" + str(seed)) / "models" / workload / directory / "checkpoint.pt"
+                                if candidate.is_file():
+                                    checkpoint = candidate
+                                    command.extend(["--resume", str(checkpoint)])
                             name = f"{stage}-{workload}-{seed}-{directory}-train"
                             record = execute_step(name, command, ROOT, target / "logs",
                                                   args.timeout_hours * 3600,
                                                   [output / actor, output / critic], env, publish)
+                            if checkpoint is not None:
+                                record["resume_checkpoint"] = str(checkpoint)
                             state["steps"].append(record)
                             publish(record)
                             if record["status"] != "completed":

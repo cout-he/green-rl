@@ -32,6 +32,15 @@
 ## 实际运行状态
 
 - `gas-marl-20261021-smoke-01`：CUDA 的 MARL 训练、PPO 训练、author 评测、paper 评测四步均退出0；每训练1轮2轨迹，评测1段64作业。这只证明完整链条可以执行，汇总见 `smoke_summary.json`。
-- `gas-marl-20261021-baseline-01`：北京时间10:46启动，本次前置smoke已通过，进入300轮GAS-MARL训练；随后自动训练PPO并做10段1024作业评测。完整数值结论待产出。
+- `gas-marl-20261021-baseline-01`：北京时间10:46启动，前置smoke通过；训练日志最后完成127/300轮，监督器心跳止于13:19:56。再次核查确认整棵训练进程树均已退出，stderr与launcher日志为空；检查窗口内未找到对应重启/睡眠/应用崩溃事件。具体退出原因未确认，旧state的running字段已标记interrupted并先备份。原循环仅在全部训练结束时保存模型，因此没有可恢复权重，不能从第128轮续训。小型原始证据见`baseline01_interruption.json`与`evidence/baseline01_training_partial.csv`。
 - 当前聊天已创建15分钟 heartbeat，automation id为 `gas-marl`，只在完成、失败、需用户行动或实质科研发现时通知。以实际进程与日志为准，禁止重复启动。
 - 报告 `reports/拆解报告_GAS_MARL.docx` 已完成四页视觉核查；标准renderer缺LibreOffice，替代用独立隐藏Word实例导出PDF后由bundled pypdfium2渲染，无裁切/重叠/空白页或表格断裂。QA中间产物不提交。
+
+## 2026-10-21 中断恢复工程
+
+- 已确认的缺陷是中途没有保存可恢复状态，并非数值发散证据。新增原子完整检查点，默认每5轮及最终轮保存；恢复网络、双Adam、Python/NumPy/Torch CPU/CUDA及环境RNG，修复CSV尾部与检查点不一致的情况。总epochs允许扩展，其他训练元数据必须匹配；纯actor文件不能用来续训。
+- 新增流水线`--resume-from`：以新run-id读取旧基线检查点，smoke不续用；先检查数据和训练源码/配置哈希。当前01任务没有检查点，下一次02必须从头训练。
+- 在实际用户权限下验证Windows进程树超时清理；沙箱token中的taskkill会返回凭据错误，不能把该情况下只杀启动器当作成功清理。新增独立隐藏CIM启动脚本，小探针证实其venv启动器不属于调用工具的Windows job，子解释器可以属于venv自己的job。不能据此断言旧任务必定因job关闭而退出。
+- 真实CUDA两算法分别对照连续2轮与1轮后恢复至2轮，每轮2轨迹、每轨迹256作业。模型、双Adam、后续全部RNG、CSV历史逐项完全一致，见`checkpoint_validation.json`。该测试仅验证恢复工程，不提供完整基线的性能证据。
+- 离线基线汇总脚本拒绝未完成/仅smoke/错误序列/非有限指标，校验逐序列值与CSV均值；作者模式对照Table3/4，paper模式仅记录同一作者训练模型的敏感性。附近文献阶段笔记见`literature_nearby.md`。
+- 最终完整44项测试通过（含CUDA恢复及真实子进程树超时清理），环境检查`--require-cuda`退出0。下一次使用新编号`gas-marl-20261021-baseline-02`，不读取01的模型；是否已启动以及当前进程以`LATEST_RUN.json`指向的实际state与日志为准。

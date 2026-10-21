@@ -1,0 +1,46 @@
+{
+  "scope": "Engineering validation only, not published-configuration reproduction",
+  "device": "cuda",
+  "workload": "lublin_256",
+  "seed": 0,
+  "backfill": 1,
+  "trajectories_per_epoch": 2,
+  "uninterrupted_epochs": 2,
+  "split_epochs": [
+    1,
+    1
+  ],
+  "elementwise_exact_match": {
+    "MARL": {
+      "completed_epoch": true,
+      "metadata": true,
+      "actor": true,
+      "critic": true,
+      "actor_optimizer": true,
+      "critic_optimizer": true,
+      "rng": true,
+      "csv_history": true
+    },
+    "PPO": {
+      "completed_epoch": true,
+      "metadata": true,
+      "actor": true,
+      "critic": true,
+      "actor_optimizer": true,
+      "critic_optimizer": true,
+      "rng": true,
+      "csv_history": true
+    }
+  },
+  "environment_report": "results/recovery-validation/environment.json",
+  "probe": {
+    "pid": 12320,
+    "launcher_pid": 36976,
+    "launcher_in_windows_job": false,
+    "query_succeeded": true,
+    "stage": "completed",
+    "timestamp": 1792564730.8868055
+  },
+  "primary_exit_cause": "unconfirmed",
+  "limit": "Equivalent continuation verified on two tiny real rollouts; full-length resumed training and stability across an actual desktop restart have not been tested."
+}
