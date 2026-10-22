@@ -1,0 +1,28 @@
+{
+  "workload": "lublin_256",
+  "seed": 0,
+  "device": "cuda",
+  "num_threads": 1,
+  "backfill": 1,
+  "model_root": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\models",
+  "algorithms": [
+    "FCFS",
+    "F2",
+    "PPO",
+    "MARL"
+  ],
+  "starts": [
+    6567,
+    7146,
+    919,
+    4498,
+    8632,
+    8217,
+    6890,
+    5225,
+    8064,
+    6122
+  ],
+  "sequence_length": 1024,
+  "evaluation_policy": "sample"
+}

@@ -2,9 +2,10 @@ param(
     [Parameter(Mandatory=$true)][ValidatePattern('^[A-Za-z0-9][A-Za-z0-9._-]*$')][string]$RunId,
     [ValidateSet('smoke','baseline','all')][string]$Stage='baseline',
     [ValidateSet('lublin_256','Cirne','Jann')][string]$Workload='lublin_256',
-    [int]$Seed=0,
+    [int[]]$Seed=@(0),
     [ValidateSet('cpu','cuda','auto')][string]$Device='cuda',
     [ValidateRange(0,300)][int]$CheckpointEvery=5,
+    [ValidateSet('legacy','paired')][string]$EvaluationSeedMode='legacy',
     [string]$ResumeFrom=''
 )
 $ErrorActionPreference='Stop'
@@ -21,7 +22,7 @@ New-Item -ItemType Directory -Path (Join-Path $projectRoot 'results') -Force | O
 # WMI creates the launcher outside the calling tool job. The venv redirector may
 # still create its own job for its interpreter; state.json.pid is authoritative.
 # Microsoft: https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects
-$commandLine='"'+$python+'" -X utf8 "'+$script+'" --stage '+$Stage+' --workloads '+$Workload+' --seeds '+$Seed+' --device '+$Device+' --num-threads 1 --timeout-hours 12 --checkpoint-every '+$CheckpointEvery+' --run-id '+$RunId
+$commandLine='"'+$python+'" -X utf8 "'+$script+'" --stage '+$Stage+' --workloads '+$Workload+' --seeds '+($Seed -join ' ')+' --device '+$Device+' --num-threads 1 --timeout-hours 12 --checkpoint-every '+$CheckpointEvery+' --evaluation-seed-mode '+$EvaluationSeedMode+' --run-id '+$RunId
 if ($ResumeFrom) {
     $previous=(Resolve-Path -LiteralPath $ResumeFrom).Path
     $commandLine+=' --resume-from "'+$previous+'"'

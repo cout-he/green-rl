@@ -1,0 +1,165 @@
+{
+  "status": "completed_first_seed_baseline",
+  "training_seed_count": 1,
+  "training_seed": 0,
+  "run_id": "gas-marl-20261021-baseline-02",
+  "source_commit": "0b6541eaa2f9169e6f339c89ddab1ba65cd5b696",
+  "completed_at_beijing": "2026-10-22T04:18:10.442760+08:00",
+  "elapsed_hours": 13.568928739444445,
+  "author": {
+    "FCFS": {
+      "workload": "lublin_256",
+      "training_seed": 0,
+      "semantics": "author",
+      "evaluation_seed_mode": "legacy",
+      "training_semantics": "author",
+      "algorithm": "FCFS",
+      "evaluation_policy": "sample",
+      "sequence_count": 10,
+      "sequence_length": 1024,
+      "bsld_mean": 91.0012213927649,
+      "bsld_sequence_sample_stddev": 34.99691595862078,
+      "reutil_mean": 0.6186178131052353,
+      "reutil_sequence_sample_stddev": 0.0500289313141448,
+      "evidence": {
+        "result.csv": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\result.csv",
+        "rows.json": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\rows.json",
+        "metadata.json": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\metadata.json"
+      }
+    },
+    "F2": {
+      "workload": "lublin_256",
+      "training_seed": 0,
+      "semantics": "author",
+      "evaluation_seed_mode": "legacy",
+      "training_semantics": "author",
+      "algorithm": "F2",
+      "evaluation_policy": "sample",
+      "sequence_count": 10,
+      "sequence_length": 1024,
+      "bsld_mean": 55.66666703624958,
+      "bsld_sequence_sample_stddev": 30.731020138386477,
+      "reutil_mean": 0.591820153035898,
+      "reutil_sequence_sample_stddev": 0.05260377055215445,
+      "evidence": {
+        "result.csv": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\result.csv",
+        "rows.json": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\rows.json",
+        "metadata.json": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\metadata.json"
+      }
+    },
+    "PPO": {
+      "workload": "lublin_256",
+      "training_seed": 0,
+      "semantics": "author",
+      "evaluation_seed_mode": "legacy",
+      "training_semantics": "author",
+      "algorithm": "PPO",
+      "evaluation_policy": "sample",
+      "sequence_count": 10,
+      "sequence_length": 1024,
+      "bsld_mean": 65.273664387531,
+      "bsld_sequence_sample_stddev": 28.010449986450553,
+      "reutil_mean": 0.6678165563691459,
+      "reutil_sequence_sample_stddev": 0.03964586932951631,
+      "evidence": {
+        "result.csv": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\result.csv",
+        "rows.json": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\rows.json",
+        "metadata.json": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\metadata.json"
+      },
+      "published_anchor": {
+        "bsld": 56.358,
+        "reutil": 0.6767,
+        "source": "research/PROTOCOL.md, Table 3/4"
+      },
+      "published_difference": {
+        "bsld_relative_percent": 15.81969620556265,
+        "reutil_percentage_points": -0.8883443630854027
+      }
+    },
+    "MARL": {
+      "workload": "lublin_256",
+      "training_seed": 0,
+      "semantics": "author",
+      "evaluation_seed_mode": "legacy",
+      "training_semantics": "author",
+      "algorithm": "MARL",
+      "evaluation_policy": "sample",
+      "sequence_count": 10,
+      "sequence_length": 1024,
+      "bsld_mean": 19.839259661123393,
+      "bsld_sequence_sample_stddev": 5.2942814693156555,
+      "reutil_mean": 0.8033531611815841,
+      "reutil_sequence_sample_stddev": 0.048026437716989175,
+      "evidence": {
+        "result.csv": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\result.csv",
+        "rows.json": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\rows.json",
+        "metadata.json": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\metadata.json"
+      },
+      "published_anchor": {
+        "bsld": 31.738,
+        "reutil": 0.8154,
+        "source": "research/PROTOCOL.md, Table 3/4"
+      },
+      "published_difference": {
+        "bsld_relative_percent": -37.49051716830489,
+        "reutil_percentage_points": -1.204683881841595
+      }
+    }
+  },
+  "paired_means": {
+    "author": {
+      "FCFS": {
+        "average_bounded_slowdown": 91.0012213927649,
+        "renewable_energy_utilization": 0.6186178131052353
+      },
+      "F2": {
+        "average_bounded_slowdown": 55.66666703624958,
+        "renewable_energy_utilization": 0.591820153035898
+      },
+      "PPO": {
+        "average_bounded_slowdown": 59.978053599393874,
+        "renewable_energy_utilization": 0.672809505932304
+      },
+      "MARL": {
+        "average_bounded_slowdown": 23.678116749932244,
+        "renewable_energy_utilization": 0.7902241787060854
+      }
+    },
+    "paper": {
+      "FCFS": {
+        "average_bounded_slowdown": 91.0012213927649,
+        "renewable_energy_utilization": 0.6186178131052353
+      },
+      "F2": {
+        "average_bounded_slowdown": 55.66666703624958,
+        "renewable_energy_utilization": 0.591820153035898
+      },
+      "PPO": {
+        "average_bounded_slowdown": 59.978053599393874,
+        "renewable_energy_utilization": 0.672809505932304
+      },
+      "MARL": {
+        "average_bounded_slowdown": 20.741920518093693,
+        "renewable_energy_utilization": 0.7945797364770703
+      }
+    }
+  },
+  "paired_controls_exactly_equal": true,
+  "legacy_ppo_equal_windows": 1,
+  "paired_marl_bsld_change_percent": -12.400463528616367,
+  "paired_marl_reutil_change_pp": 0.43555577709848414,
+  "model_sha256": {
+    "baseline\\lublin_256\\seed_0\\models\\lublin_256\\MARL\\_actor.pkl": "48788af87fe5dbd83c42fbe4cfaf2989f1f7e488469461383cb164fb454ecbee",
+    "baseline\\lublin_256\\seed_0\\models\\lublin_256\\MARL\\_critic.pkl": "dc27a058239d431172060b7ce7da1a336542c0b073643f47422eb989b2cd59b0",
+    "baseline\\lublin_256\\seed_0\\models\\lublin_256\\MaskablePPO\\actor.pkl": "6cf36ff60d0556e4a9c396ad739991eed2961477754cd2b269a0aa78e6168ae1",
+    "baseline\\lublin_256\\seed_0\\models\\lublin_256\\MaskablePPO\\critic.pkl": "d6436497d2eb5a7c42fcf298f595e03c2536f86a5b24e5ffa7446eb2c7f2c381"
+  },
+  "paired_compare_sha256": "19d63214503b1848fb37a2a769ccd99057c0c584632dc60fed3caaa18b9e0412",
+  "limits": [
+    "One independent training seed.",
+    "Ten partly overlapping windows are descriptive evaluation slices, not independent training replicates.",
+    "Source snapshot verification does not claim current files remain identical after isolated evaluation fixes.",
+    "Original paper-author comparison is confounded by shared RNG consumption.",
+    "Matched evaluation uses one base seed."
+  ]
+}

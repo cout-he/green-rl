@@ -1,0 +1,2 @@
+# Optional plotting only. Does not replace the frozen training environment.
+matplotlib==3.8.4

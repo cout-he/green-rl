@@ -93,6 +93,7 @@ def validate_evaluation(root, workload, seed, semantics):
             require(math.isclose(value, metric(aggregate[column], key), rel_tol=1e-9, abs_tol=1e-9),
                     f"{algorithm}: CSV mean differs from per-sequence {key}")
         result = {"workload": workload, "training_seed": seed, "semantics": semantics,
+                  "evaluation_seed_mode": metadata.get("evaluation_seed_mode", "legacy"),
                   "training_semantics": "author", "algorithm": algorithm,
                   "evaluation_policy": metadata["evaluation_policy"], "sequence_count": 10,
                   "sequence_length": 1024, "bsld_mean": bsld_mean,
@@ -177,6 +178,7 @@ def build_summary(root):
             "evaluations": results, "evidence": evidence(root, state),
             "interpretation": ["Ten slices are not independent training seeds; standard deviations describe evaluation sequences only.",
                                "Author and paper evaluations both use author-trained models. Paper mode is sensitivity analysis, not a new algorithm.",
+                               "Legacy evaluations share one RNG stream across algorithms and sequences: paper-author differences may include sampling-stream changes and are not isolated causal effects.",
                                "No significance test or reproduction-success claim is inferred.",
                                "Positive BSLD differences mean slower; positive ReUtil differences mean more renewable utilization."]}
 

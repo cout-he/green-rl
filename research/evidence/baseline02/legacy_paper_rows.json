@@ -1,0 +1,402 @@
+[
+  {
+    "algorithm": "FCFS",
+    "iteration": 1,
+    "start": 6567,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 128.42637015043408,
+    "renewable_energy_utilization": 0.6001221046066663,
+    "reward": 0.3432693643057981
+  },
+  {
+    "algorithm": "F2",
+    "iteration": 1,
+    "start": 6567,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 59.125269386953896,
+    "renewable_energy_utilization": 0.6300195615105223,
+    "reward": 0.5117690227366145
+  },
+  {
+    "algorithm": "PPO",
+    "iteration": 1,
+    "start": 6567,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 99.80560177202648,
+    "renewable_energy_utilization": 0.6657342959530052,
+    "reward": 0.4661230924089522
+  },
+  {
+    "algorithm": "MARL",
+    "iteration": 1,
+    "start": 6567,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 17.581812704329845,
+    "renewable_energy_utilization": 0.785026818109542,
+    "reward": 0.7498631927008823
+  },
+  {
+    "algorithm": "FCFS",
+    "iteration": 2,
+    "start": 7146,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 114.45202292610165,
+    "renewable_energy_utilization": 0.6248362587383925,
+    "reward": 0.39593221288618924
+  },
+  {
+    "algorithm": "F2",
+    "iteration": 2,
+    "start": 7146,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 63.65626278418709,
+    "renewable_energy_utilization": 0.6188601844688323,
+    "reward": 0.4915476589004581
+  },
+  {
+    "algorithm": "PPO",
+    "iteration": 2,
+    "start": 7146,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 63.35131838846678,
+    "renewable_energy_utilization": 0.6843001194061206,
+    "reward": 0.557597482629187
+  },
+  {
+    "algorithm": "MARL",
+    "iteration": 2,
+    "start": 7146,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 26.47940677404727,
+    "renewable_energy_utilization": 0.7844950528260851,
+    "reward": 0.7315362392779906
+  },
+  {
+    "algorithm": "FCFS",
+    "iteration": 3,
+    "start": 919,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 51.01316602795782,
+    "renewable_energy_utilization": 0.5594227232157829,
+    "reward": 0.45739639115986724
+  },
+  {
+    "algorithm": "F2",
+    "iteration": 3,
+    "start": 919,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 25.149026104327593,
+    "renewable_energy_utilization": 0.5022523786347595,
+    "reward": 0.4519543264261043
+  },
+  {
+    "algorithm": "PPO",
+    "iteration": 3,
+    "start": 919,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 56.690125616208874,
+    "renewable_energy_utilization": 0.612802739490772,
+    "reward": 0.4994224882583543
+  },
+  {
+    "algorithm": "MARL",
+    "iteration": 3,
+    "start": 919,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 17.825045085483357,
+    "renewable_energy_utilization": 0.7406374751116154,
+    "reward": 0.7049873849406486
+  },
+  {
+    "algorithm": "FCFS",
+    "iteration": 4,
+    "start": 4498,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 70.53053966155362,
+    "renewable_energy_utilization": 0.604429658403722,
+    "reward": 0.46336857908061474
+  },
+  {
+    "algorithm": "F2",
+    "iteration": 4,
+    "start": 4498,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 51.876356579357235,
+    "renewable_energy_utilization": 0.6049311483893162,
+    "reward": 0.5011784352306017
+  },
+  {
+    "algorithm": "PPO",
+    "iteration": 4,
+    "start": 4498,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 41.02510853423053,
+    "renewable_energy_utilization": 0.6483023577993426,
+    "reward": 0.5662521407308816
+  },
+  {
+    "algorithm": "MARL",
+    "iteration": 4,
+    "start": 4498,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 18.210712967795896,
+    "renewable_energy_utilization": 0.7442197985923279,
+    "reward": 0.7077983726567361
+  },
+  {
+    "algorithm": "FCFS",
+    "iteration": 5,
+    "start": 8632,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 64.4008936123077,
+    "renewable_energy_utilization": 0.690494305596809,
+    "reward": 0.5616925183721936
+  },
+  {
+    "algorithm": "F2",
+    "iteration": 5,
+    "start": 8632,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 40.93133477709143,
+    "renewable_energy_utilization": 0.6353128461357875,
+    "reward": 0.5534501765816047
+  },
+  {
+    "algorithm": "PPO",
+    "iteration": 5,
+    "start": 8632,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 55.666111567353596,
+    "renewable_energy_utilization": 0.6908619063204051,
+    "reward": 0.579529683185698
+  },
+  {
+    "algorithm": "MARL",
+    "iteration": 5,
+    "start": 8632,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 25.691919474407648,
+    "renewable_energy_utilization": 0.8446650215274112,
+    "reward": 0.7932811825785959
+  },
+  {
+    "algorithm": "FCFS",
+    "iteration": 6,
+    "start": 8217,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 61.01346325122804,
+    "renewable_energy_utilization": 0.6759632452412593,
+    "reward": 0.5539363187388032
+  },
+  {
+    "algorithm": "F2",
+    "iteration": 6,
+    "start": 8217,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 29.995830409351342,
+    "renewable_energy_utilization": 0.6396356777824842,
+    "reward": 0.5796440169637815
+  },
+  {
+    "algorithm": "PPO",
+    "iteration": 6,
+    "start": 8217,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 33.56021019053262,
+    "renewable_energy_utilization": 0.7455486734755422,
+    "reward": 0.678428253094477
+  },
+  {
+    "algorithm": "MARL",
+    "iteration": 6,
+    "start": 8217,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 14.009265358543953,
+    "renewable_energy_utilization": 0.8592353767673844,
+    "reward": 0.8312168460502964
+  },
+  {
+    "algorithm": "FCFS",
+    "iteration": 7,
+    "start": 6890,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 157.4593067976569,
+    "renewable_energy_utilization": 0.6429780001540631,
+    "reward": 0.32805938655874933
+  },
+  {
+    "algorithm": "F2",
+    "iteration": 7,
+    "start": 6890,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 125.75835897677842,
+    "renewable_energy_utilization": 0.6328181489195837,
+    "reward": 0.3813014309660268
+  },
+  {
+    "algorithm": "PPO",
+    "iteration": 7,
+    "start": 6890,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 89.70903444339905,
+    "renewable_energy_utilization": 0.670827487028888,
+    "reward": 0.4914094181420898
+  },
+  {
+    "algorithm": "MARL",
+    "iteration": 7,
+    "start": 6890,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 26.494037127097254,
+    "renewable_energy_utilization": 0.8136196168134316,
+    "reward": 0.7606315425592372
+  },
+  {
+    "algorithm": "FCFS",
+    "iteration": 8,
+    "start": 5225,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 81.95398843919223,
+    "renewable_energy_utilization": 0.5398300843948431,
+    "reward": 0.3759221075164587
+  },
+  {
+    "algorithm": "F2",
+    "iteration": 8,
+    "start": 5225,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 86.63769786240049,
+    "renewable_energy_utilization": 0.5013762942431317,
+    "reward": 0.3281008985183307
+  },
+  {
+    "algorithm": "PPO",
+    "iteration": 8,
+    "start": 5225,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 49.960596330010226,
+    "renewable_energy_utilization": 0.6272714548363281,
+    "reward": 0.5273502621763076
+  },
+  {
+    "algorithm": "MARL",
+    "iteration": 8,
+    "start": 5225,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 25.324078571142262,
+    "renewable_energy_utilization": 0.7311261910672574,
+    "reward": 0.6804780339249729
+  },
+  {
+    "algorithm": "FCFS",
+    "iteration": 9,
+    "start": 8064,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 68.60692885518054,
+    "renewable_energy_utilization": 0.6635808198054225,
+    "reward": 0.5263669620950614
+  },
+  {
+    "algorithm": "F2",
+    "iteration": 9,
+    "start": 8064,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 33.9753301146483,
+    "renewable_energy_utilization": 0.574116148505533,
+    "reward": 0.5061654882762364
+  },
+  {
+    "algorithm": "PPO",
+    "iteration": 9,
+    "start": 8064,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 45.34816415514949,
+    "renewable_energy_utilization": 0.7013251650254172,
+    "reward": 0.6106288367151183
+  },
+  {
+    "algorithm": "MARL",
+    "iteration": 9,
+    "start": 8064,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 31.55404977952549,
+    "renewable_energy_utilization": 0.8619867888998778,
+    "reward": 0.7988786893408268
+  },
+  {
+    "algorithm": "FCFS",
+    "iteration": 10,
+    "start": 6122,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 112.15553420603648,
+    "renewable_energy_utilization": 0.5845209308953928,
+    "reward": 0.3602098624833199
+  },
+  {
+    "algorithm": "F2",
+    "iteration": 10,
+    "start": 6122,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 39.56120336739995,
+    "renewable_energy_utilization": 0.5788791417690297,
+    "reward": 0.4997567350342298
+  },
+  {
+    "algorithm": "PPO",
+    "iteration": 10,
+    "start": 6122,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 46.432267253154684,
+    "renewable_energy_utilization": 0.638544874181405,
+    "reward": 0.5456803396750957
+  },
+  {
+    "algorithm": "MARL",
+    "iteration": 10,
+    "start": 6122,
+    "sequence_length": 1024,
+    "seed": 0,
+    "average_bounded_slowdown": 24.689769990766692,
+    "renewable_energy_utilization": 0.8143490195452006,
+    "reward": 0.7649694795636672
+  }
+]

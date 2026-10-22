@@ -10,9 +10,11 @@ import io
 import json
 import os
 from pathlib import Path
+import shutil
 import signal
 import subprocess
 import sys
+import tempfile
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,6 +31,46 @@ def write_json(path, data):
     temporary = path.with_name(path.name + ".tmp")
     temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     os.replace(temporary, path)
+
+
+def inherit_completed_checkpoint(source, target, epochs):
+    """Carry a skipped, completed resume forward without replacing a child's new state."""
+    source, target = Path(source), Path(target)
+    if target.exists():
+        return False
+    import torch
+    payload = torch.load(source, map_location="cpu", weights_only=False)
+    required = {"format_version", "completed_epoch", "metadata", "actor", "critic",
+                "actor_optimizer", "critic_optimizer", "rng", "csv_history"}
+    if (not isinstance(payload, dict) or not required.issubset(payload)
+            or payload["format_version"] != 1
+            or not isinstance(payload["completed_epoch"], int)
+            or any(not isinstance(payload[key], dict) for key in
+                   ("actor", "critic", "actor_optimizer", "critic_optimizer", "rng", "metadata"))
+            or not {"python", "numpy", "torch_cpu", "torch_cuda", "environment"}.issubset(payload["rng"])
+            or any(not {"state", "param_groups"}.issubset(payload[key])
+                   for key in ("actor_optimizer", "critic_optimizer"))):
+        raise ValueError("Not a complete training checkpoint; actor weights cannot be inherited")
+    if payload["completed_epoch"] != epochs:
+        return False
+    target.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, temporary = tempfile.mkstemp(prefix="." + target.name + ".", suffix=".tmp", dir=target.parent)
+    try:
+        with os.fdopen(descriptor, "wb") as output, source.open("rb") as original:
+            shutil.copyfileobj(original, output)
+            output.flush()
+            os.fsync(output.fileno())
+        try:
+            if os.name == "nt":
+                os.rename(temporary, target)  # Windows rename refuses an existing destination.
+            else:
+                os.link(temporary, target)  # Publish atomically without POSIX rename's overwrite.
+        except FileExistsError:
+            return False
+        return True
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
 
 
 def terminate_tree(child):
@@ -168,6 +210,8 @@ def main(argv=None):
     parser.add_argument("--run-id", default=datetime.now().strftime("%Y%m%d-%H%M%S"))
     parser.add_argument("--checkpoint-every", type=int, default=5,
                         help="Save complete training state every N epochs (0 disables periodic saves)")
+    parser.add_argument("--evaluation-seed-mode", choices=["legacy", "paired"], default="legacy",
+                        help="paired isolates sampling by algorithm and published sequence")
     parser.add_argument("--resume-from", type=Path,
                         help="Previous run directory; resume available full-baseline checkpoints only")
     args = parser.parse_args(argv)
@@ -231,8 +275,9 @@ def main(argv=None):
                             ("MARL.py", "MARL", "_actor.pkl", "_critic.pkl"),
                             ("MaskablePPO.py", "MaskablePPO", "actor.pkl", "critic.pkl")]:
                             output = model_root / workload / directory
+                            epochs = 1 if stage == "smoke" else 300
                             command = [sys.executable, "-X", "utf8", str(ROOT / script), *common,
-                                       "--epochs", "1" if stage == "smoke" else "300",
+                                       "--epochs", str(epochs),
                                        "--traj-num", "2" if stage == "smoke" else "100",
                                        "--output-dir", str(output),
                                        "--checkpoint-every", str(args.checkpoint_every)]
@@ -248,10 +293,17 @@ def main(argv=None):
                                                   [output / actor, output / critic], env, publish)
                             if checkpoint is not None:
                                 record["resume_checkpoint"] = str(checkpoint)
+                                if record["status"] == "completed":
+                                    try:
+                                        inherited = output / "checkpoint.pt"
+                                        if inherit_completed_checkpoint(checkpoint, inherited, epochs):
+                                            record["inherited_checkpoint"] = str(inherited)
+                                    except Exception as exc:
+                                        record.update(status="failed", error="Checkpoint inheritance failed: " + str(exc))
                             state["steps"].append(record)
                             publish(record)
                             if record["status"] != "completed":
-                                raise RuntimeError(name + " " + record["status"])
+                                raise RuntimeError(name + " " + record["status"] + ": " + record.get("error", ""))
                         for semantics in ["author", "paper"]:
                             output = target / "evaluation" / semantics
                             env["GREEN_RL_DELAY_SEMANTICS"] = semantics
@@ -259,6 +311,7 @@ def main(argv=None):
                                        "--len", "64" if stage == "smoke" else "1024",
                                        "--iter", "1" if stage == "smoke" else "10",
                                        "--model-root", str(model_root), "--output-dir", str(output),
+                                       "--seed-mode", args.evaluation_seed_mode,
                                        "--algorithms", "FCFS", "F2", "PPO", "MARL"]
                             name = f"{stage}-{workload}-{seed}-{semantics}-evaluate"
                             record = execute_step(name, command, ROOT, target / "logs",

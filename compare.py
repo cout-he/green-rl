@@ -134,7 +134,10 @@ def GA_policy(env,eta):
 
 # @profile
 def run_policy(env, nums, iters, workload='lublin_256', model_root=None,
-               output_dir='.', seed=0, device='auto', num_threads=1, algorithms=None):
+               output_dir='.', seed=0, device='auto', num_threads=1, algorithms=None,
+               seed_mode='legacy'):
+    if seed_mode not in ('legacy', 'paired'):
+        raise ValueError("seed_mode must be legacy or paired")
     if not 1 <= iters <= 10:
         raise ValueError("iters must be between 1 and 10 for the published evaluation starts")
     if nums < 1:
@@ -163,6 +166,13 @@ def run_policy(env, nums, iters, workload='lublin_256', model_root=None,
     rows = []
     for iter_num, start in enumerate(starts):
         for algorithm in algorithms:
+            policy_seed = None
+            if seed_mode == 'paired':
+                # Fixed identities keep seed assignments independent of selection/order.
+                policy_seed = (seed + 1000003 * (iter_num + 1) + 10007 * available.index(algorithm)) % (2 ** 32)
+                device = configure_runtime(policy_seed, device, num_threads)
+                if hasattr(env, 'seed'):
+                    env.seed(policy_seed)
             env.reset_for_test(nums, start)
             if algorithm in ('FCFS', 'F2'):
                 score = env.fcfs_score if algorithm == 'FCFS' else env.f2_score
@@ -182,6 +192,7 @@ def run_policy(env, nums, iters, workload='lublin_256', model_root=None,
                 slowdown = -reward
             row = {"algorithm": algorithm, "iteration": iter_num + 1, "start": start,
                    "sequence_length": nums, "seed": seed,
+                   "policy_seed": policy_seed,
                    "average_bounded_slowdown": float(slowdown),
                    "renewable_energy_utilization": float(green_reward),
                    "reward": float(green_reward - eta * slowdown)}
@@ -202,6 +213,9 @@ def run_policy(env, nums, iters, workload='lublin_256', model_root=None,
                 'num_threads': num_threads, 'backfill': env.backfill,
                 'model_root': os.path.abspath(model_root), 'algorithms': algorithms,
                 'starts': starts, 'sequence_length': nums, 'evaluation_policy': 'sample'}
+    metadata.update(evaluation_seed_mode=seed_mode, delay_semantics=getattr(env, 'delay_semantics', 'unknown'),
+                    seed_derivation='(seed + 1000003 * iteration + 10007 * fixed_algorithm_index) mod 2**32'
+                    if seed_mode == 'paired' else 'one shared stream for the complete evaluation')
     with open(os.path.join(output_dir, 'metadata.json'), 'w', encoding='utf-8') as stream:
         json.dump(metadata, stream, indent=2)
     return rows
@@ -222,6 +236,7 @@ if __name__ == '__main__':
     parser.add_argument('--device', default='auto')
     parser.add_argument('--num-threads', type=int, default=1)
     parser.add_argument('--algorithms', nargs='+', default=None)
+    parser.add_argument('--seed-mode', choices=['legacy', 'paired'], default='legacy')
     args = parser.parse_args()
 
     current_dir = os.getcwd()
@@ -235,4 +250,4 @@ if __name__ == '__main__':
     start = time.time()
     run_policy(env, args.len, args.iter, workload=args.workload, model_root=args.model_root,
                output_dir=args.output_dir, seed=args.seed, device=args.device,
-               num_threads=args.num_threads, algorithms=args.algorithms)
+               num_threads=args.num_threads, algorithms=args.algorithms, seed_mode=args.seed_mode)

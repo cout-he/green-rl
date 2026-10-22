@@ -1,0 +1,222 @@
+{
+  "recorded_at_utc": "2026-10-21T06:42:04.331045+00:00",
+  "project_root": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main",
+  "python": {
+    "executable": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\.venv\\Scripts\\python.exe",
+    "version": "3.11.15 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:12:53) [MSC v.1942 64 bit (AMD64)]",
+    "prefix": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\.venv",
+    "base_prefix": "D:\\anaconda\\envs\\llama_factory",
+    "isolated_venv": true
+  },
+  "hardware": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "Intel(R) Core(TM) i5-14600KF",
+    "logical_cpu_count": 20,
+    "memory": {
+      "total_physical_bytes": 34186022912,
+      "available_physical_bytes": 17087160320
+    },
+    "nvidia_smi": {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=name,memory.total,memory.used,memory.free,utilization.gpu,driver_version",
+        "--format=csv,noheader"
+      ],
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 5060, 8151 MiB, 1283 MiB, 6614 MiB, 0 %, 610.88",
+      "stderr": ""
+    },
+    "gpu_compute_processes": {
+      "command": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_memory",
+        "--format=csv,noheader"
+      ],
+      "returncode": 0,
+      "stdout": "1844, [Insufficient Permissions], [N/A]\n6812, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\CrossDeviceResume.exe, [N/A]\n6748, C:\\Windows\\explorer.exe, [N/A]\n11168, C:\\Windows\\SystemApps\\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\\StartMenuExperienceHost.exe, [N/A]\n11144, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe, [N/A]\n13288, C:\\Windows\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe, [N/A]\n10416, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\155.0.4283.60\\msedgewebview2.exe, [N/A]\n10996, [Insufficient Permissions], [N/A]\n14600, C:\\Windows\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe, [N/A]\n8288, [Insufficient Permissions], [N/A]\n14424, C:\\Program Files\\WindowsApps\\Microsoft.YourPhone_1.26082.121.0_x64__8wekyb3d8bbwe\\PhoneExperienceHost.exe, [N/A]\n14248, C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe, [N/A]\n6660, D:\\steam\\bin\\cef\\cef.win64\\steamwebhelper.exe, [N/A]\n9116, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\155.0.4283.60\\msedgewebview2.exe, [N/A]\n14392, D:\\epic\\Epic Games\\Launcher\\Portal\\Binaries\\Win64\\EpicGamesLauncher.exe, [N/A]\n18644, D:\\epic\\Epic Games\\Launcher\\Engine\\Binaries\\Win64\\EpicWebHelper.exe, [N/A]\n18820, C:\\Program Files (x86)\\Epic Games\\Epic Online Services\\managedArtifacts\\98bc04bc842e4906993fd6d6644ffb8d\\EOSOverlayRenderer-Win64-Shipping.exe, [N/A]\n15944, D:\\youdao\\Dict\\11.3.22.0\\YoudaoDictHelper.exe, [N/A]\n17032, C:\\Program Files\\WindowsApps\\Microsoft.BingWallpaper_1.1.469.0_x86__8wekyb3d8bbwe\\BingWallpaper.exe, [N/A]\n22524, C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\155.0.4283.60\\msedgewebview2.exe, [N/A]\n20976, C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe, [N/A]\n12636, C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe, [N/A]\n27312, C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe, [N/A]\n23608, C:\\Windows\\System32\\ApplicationFrameHost.exe, [N/A]\n17300, C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe, [N/A]\n22228, C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\copilotapp.exe, [N/A]\n26812, C:\\Program Files (x86)\\Microsoft\\Copilot\\Application\\undocked_copilot\\copilotapphost.exe, [N/A]\n10476, C:\\Windows\\System32\\ShellHost.exe, [N/A]\n1904, [Insufficient Permissions], [N/A]\n7456, [Insufficient Permissions], [N/A]\n36192, C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1016.6573.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe, [N/A]\n13000, C:\\Users\\hwj\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\2fbcd108736f9c20\\bin\\node_modules\\@oai\\sky\\bin\\windows\\swift\\x64\\codex-computer-use-swift.exe, [N/A]",
+      "stderr": ""
+    }
+  },
+  "dependencies": {
+    "numpy": {
+      "version": "1.24.4",
+      "module_path": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\.venv\\Lib\\site-packages\\numpy\\__init__.py",
+      "import_ok": true
+    },
+    "pandas": {
+      "version": "2.0.3",
+      "module_path": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\.venv\\Lib\\site-packages\\pandas\\__init__.py",
+      "import_ok": true
+    },
+    "scipy": {
+      "version": "1.14.1",
+      "module_path": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\.venv\\Lib\\site-packages\\scipy\\__init__.py",
+      "import_ok": true
+    },
+    "gym": {
+      "version": "0.15.4",
+      "module_path": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\.venv\\Lib\\site-packages\\gym\\__init__.py",
+      "import_ok": true
+    },
+    "opencv-python": {
+      "version": "4.11.0.86",
+      "module_path": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\.venv\\Lib\\site-packages\\cv2\\__init__.py",
+      "import_ok": true
+    },
+    "torch": {
+      "version": "2.7.1+cu128",
+      "module_path": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\.venv\\Lib\\site-packages\\torch\\__init__.py",
+      "import_ok": true
+    }
+  },
+  "pip_check": {
+    "command": [
+      "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "returncode": 0,
+    "stdout": "No broken requirements found.",
+    "stderr": ""
+  },
+  "installed_packages": {
+    "cloudpickle": "1.2.2",
+    "filelock": "4.2.4",
+    "fsspec": "2026.9.0",
+    "future": "1.0.0",
+    "gym": "0.15.4",
+    "Jinja2": "3.1.6",
+    "MarkupSafe": "3.0.4",
+    "mpmath": "1.3.0",
+    "networkx": "3.6.1",
+    "numpy": "1.24.4",
+    "opencv-python": "4.11.0.86",
+    "pandas": "2.0.3",
+    "pip": "24.0",
+    "pyglet": "1.3.2",
+    "python-dateutil": "2.9.0.post0",
+    "pytz": "2026.5",
+    "scipy": "1.14.1",
+    "setuptools": "79.0.1",
+    "six": "1.17.0",
+    "sympy": "1.14.0",
+    "torch": "2.7.1+cu128",
+    "typing_extensions": "4.16.0",
+    "tzdata": "2026.5"
+  },
+  "installation": {
+    "base_python": "D:\\anaconda\\envs\\llama_factory\\python.exe",
+    "commands": [
+      "D:\\anaconda\\envs\\llama_factory\\python.exe -m venv .venv",
+      "$env:TEMP=(Resolve-Path '.cache\\tmp').Path; $env:TMP=$env:TEMP; .venv\\Scripts\\python.exe -m ensurepip --upgrade --default-pip",
+      ".venv\\Scripts\\python.exe -m pip install --index-url https://pypi.org/simple numpy==1.24.4 pandas==2.0.3 scipy==1.14.1 gym==0.15.4",
+      ".venv\\Scripts\\python.exe -m pip download --no-deps torch==2.7.1+cu128 --index-url https://download.pytorch.org/whl/cu128 --dest .cache\\wheels",
+      ".venv\\Scripts\\python.exe -u .cache\\download_torch.py",
+      ".venv\\Scripts\\python.exe -m pip install --index-url https://pypi.org/simple filelock 'typing-extensions>=4.10.0' 'sympy>=1.13.3' networkx jinja2 fsspec",
+      ".venv\\Scripts\\python.exe -m pip install --no-index .cache\\wheels\\torch-2.7.1+cu128-cp311-cp311-win_amd64.whl"
+    ],
+    "torch_wheel": {
+      "url": "https://download.pytorch.org/whl/cu128/torch-2.7.1%2Bcu128-cp311-cp311-win_amd64.whl",
+      "size_bytes": 3273066072,
+      "published_sha256": "138c66dcd0ed2f07aafba3ed8b7958e2bed893694990e0b4b55b6b2b4a336aa6",
+      "download_method": "8 concurrent resumable 32MiB HTTP ranges from the official PyTorch CDN; final SHA256 verification before installation"
+    },
+    "recreate": ".venv\\Scripts\\python.exe -m pip install -r requirements-research.txt",
+    "upstream_requirements_preserved": true,
+    "deviations": [
+      "Selected NumPy 1.24.4 to resolve simultaneous upstream NumPy 1.24.3/1.24.4 pins.",
+      "PyTorch changed from 2.1.1 to 2.7.1+cu128 for RTX 5060 Blackwell support.",
+      "Pinned transitive Gym OpenCV dependency at 4.11.0.86 to retain NumPy 1.x compatibility."
+    ],
+    "sources": [
+      "https://pytorch.org/blog/pytorch-2-7/",
+      "https://pytorch.org/get-started/previous-versions/",
+      "https://pypi.org/project/gym/0.15.4/"
+    ],
+    "notes": [
+      "The venv reuses the locally available Python 3.11.15 interpreter without modifying its global environment.",
+      "Windows sandbox temporary-directory writes failed during initial ensurepip; using project-local .cache/tmp resolved this.",
+      "Initial pip download redirected to download-r2.pytorch.org and made no progress; switched to the official download.pytorch.org CDN with validated range responses.",
+      "CUDA usability is checked with an actual tensor matmul, independently of nvidia-smi's reported CUDA compatibility.",
+      "No workload or policy training is launched by this check."
+    ]
+  },
+  "simulator_primitives": {
+    "gym_seed": 7,
+    "gym_seeded_sample": 48,
+    "scipy_lfilter_result": [
+      1.0,
+      0.5,
+      0.25
+    ],
+    "ok": true
+  },
+  "torch": {
+    "version": "2.7.1+cu128",
+    "cuda_build_version": "12.8",
+    "cuda_is_available": true,
+    "cpu_matmul": {
+      "ok": true,
+      "operation": "float32 (3x4) @ (4x2)",
+      "result": [
+        [
+          28.0,
+          34.0
+        ],
+        [
+          76.0,
+          98.0
+        ],
+        [
+          124.0,
+          162.0
+        ]
+      ]
+    },
+    "cuda_devices": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5060",
+        "compute_capability": [
+          12,
+          0
+        ],
+        "total_memory_bytes": 8546484224,
+        "free_memory_bytes_before_check": 7373586432,
+        "cuda_reported_total_memory_bytes": 8546484224,
+        "matmul": {
+          "ok": true,
+          "operation": "float32 (3x4) @ (4x2)",
+          "result": [
+            [
+              28.0,
+              34.0
+            ],
+            [
+              76.0,
+              98.0
+            ],
+            [
+              124.0,
+              162.0
+            ]
+          ]
+        }
+      }
+    ],
+    "cuda_arch_list": [
+      "sm_50",
+      "sm_60",
+      "sm_61",
+      "sm_70",
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90",
+      "sm_100",
+      "sm_120"
+    ]
+  }
+}

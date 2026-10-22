@@ -1,0 +1,35 @@
+{
+  "source_run": "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02",
+  "git_commit_at_run_start": "0b6541eaa2f9169e6f339c89ddab1ba65cd5b696",
+  "matplotlib_version": "3.8.4",
+  "figures": {
+    "training": {
+      "width_mm": 183.0,
+      "height_mm": 79.0,
+      "minimum_source_text_pt": 7.0,
+      "visible_text_count": 48
+    },
+    "author_evaluation": {
+      "width_mm": 183.0,
+      "height_mm": 94.0,
+      "minimum_source_text_pt": 7.0,
+      "visible_text_count": 41
+    }
+  },
+  "source_rows": {
+    "training": 600,
+    "evaluation": 40
+  },
+  "exclusions": "None: all 600 epoch rows and 40 evaluation rows included.",
+  "transformations": "Training third CSV column negated to obtain positive BSLD; trailing mean width 10, backward only; fixed horizontal offsets for evaluation points.",
+  "uncertainty": "Sample SD (ddof=1) across ten overlapping windows, descriptive only; no seed SD, CI or significance test.",
+  "input_sha256": {
+    "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\state.json": "1bee49bbbfc526cea4c1ff4f4104262940d5a4f41b2fec104da1446cbb8267f9",
+    "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\config.ini": "0087f1b38deea59ab703d0b652e5a4edab0124dc05c935d9b2d00d06934cc719",
+    "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\models\\lublin_256\\MARL\\MARL_lublin_256.csv": "405bf9634266e70d380b0bd966956b798f653171d62fe9000b61682245ee2210",
+    "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\models\\lublin_256\\MaskablePPO\\MaskablePPO_lublin_256.csv": "df1e21f3977b7cd6aba70b35c752771a360c97c3ccf1b924aab5a1b9a06f01fc",
+    "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\rows.json": "efc7a48270dd4fe7f91d364b51cc29fcf3c3d9628de23f5c85b97a96378145c6",
+    "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\result.csv": "bef74da91ddf53ca3a489efe169722b4e449395d3da9452ec3d30f46339008ee",
+    "D:\\Downloads\\dashixiong-chaogai\\green-rl-sched-main\\green-rl-sched-main\\results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\evaluation\\author\\metadata.json": "8fc5a073471eb60ce76a911a3ff7c99e6e440d419f5cca2c3a9e7aabb2388c4f"
+  }
+}

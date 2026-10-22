@@ -54,6 +54,39 @@ def execute_main(filename, arguments, namespace):
 
 
 class TrainingEntrypointTests(unittest.TestCase):
+    def test_paired_evaluation_isolates_ppo_from_prior_marl_sampling(self):
+        import random
+        def configure(seed, *args):
+            random.seed(seed)
+            return "cpu"
+        env = SimpleNamespace(loads=SimpleNamespace(size=lambda: 10000), backfill=1,
+                              delay_semantics="author", seed=lambda seed: None,
+                              reset_for_test=lambda *args: None)
+        def marl(*args):
+            for _ in range(1 if env.delay_semantics == "author" else 4):
+                random.random()
+            return (-2., .5)
+        namespace = {"os": os, "csv": csv, "json": json, "eta": .002,
+                     "configure_runtime": configure, "load_policy": lambda *args: None,
+                     "RL_OneAction": lambda *args: (-2. - random.random(), .5),
+                     "RL_MultiAction": marl}
+        run_policy = isolated_function("compare.py", "run_policy", namespace)
+        with tempfile.TemporaryDirectory(dir=ROOT / "tests") as directory:
+            results = {}
+            for mode in ("author", "paper"):
+                env.delay_semantics = mode
+                with redirect_stdout(io.StringIO()):
+                    results[mode] = run_policy(env, 64, 2, output_dir=directory,
+                                               algorithms=["PPO", "MARL"], seed_mode="paired")
+            self.assertEqual([row for row in results["author"] if row["algorithm"] == "PPO"],
+                             [row for row in results["paper"] if row["algorithm"] == "PPO"])
+            metadata = json.loads((Path(directory) / "metadata.json").read_text())
+            self.assertEqual(metadata["evaluation_seed_mode"], "paired")
+            self.assertEqual(metadata["delay_semantics"], "paper")
+            with redirect_stdout(io.StringIO()):
+                alone = run_policy(env, 64, 2, output_dir=directory, algorithms=["PPO"], seed_mode="paired")
+            self.assertEqual(alone, [row for row in results["paper"] if row["algorithm"] == "PPO"])
+
     def test_ppo_training_honors_requested_backfill(self):
         class EnvironmentReached(Exception):
             pass
