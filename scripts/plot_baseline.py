@@ -101,6 +101,9 @@ def export(fig, target):
         raise ValueError("Text below the 5 pt glyph floor")
     for extension in (".png", ".pdf", ".svg"):
         fig.savefig(target.with_suffix(extension), dpi=600, facecolor="white")
+        if extension == ".svg":
+            path = target.with_suffix(extension)
+            path.write_text("\n".join(line.rstrip() for line in path.read_text(encoding="utf-8").splitlines()) + "\n", encoding="utf-8")
     return {"width_mm": fig.get_figwidth() * 25.4, "height_mm": fig.get_figheight() * 25.4,
             "minimum_source_text_pt": minimum, "visible_text_count": len(text)}
 
