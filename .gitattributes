@@ -1,0 +1,6 @@
+# Hash-addressed research evidence must retain its original bytes on every OS.
+/research/evidence/multiseed/** -text
+/reports/figures/gas_marl_multiseed* -text
+/scripts/*multiseed*.py text eol=lf
+/tests/test_multiseed*.py text eol=lf
+/research/PROTOCOL.md text eol=lf

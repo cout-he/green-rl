@@ -1,0 +1,31 @@
+{
+  "workload": "lublin_256",
+  "seed": 2,
+  "device": "cuda",
+  "num_threads": 1,
+  "backfill": 1,
+  "model_root": "results/gas-marl-20261022-multiseed-01/baseline/lublin_256/seed_2/models",
+  "algorithms": [
+    "FCFS",
+    "F2",
+    "PPO",
+    "MARL"
+  ],
+  "starts": [
+    6567,
+    7146,
+    919,
+    4498,
+    8632,
+    8217,
+    6890,
+    5225,
+    8064,
+    6122
+  ],
+  "sequence_length": 1024,
+  "evaluation_policy": "sample",
+  "evaluation_seed_mode": "paired",
+  "delay_semantics": "paper",
+  "seed_derivation": "(seed + 1000003 * iteration + 10007 * fixed_algorithm_index) mod 2**32"
+}

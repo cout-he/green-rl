@@ -1,0 +1,450 @@
+{
+  "status": "verified",
+  "verified_at_utc": "2026-10-23T10:00:31.724237+00:00",
+  "scope": "Retained baseline training artifacts for seeds 0, 1, 2; does not assert paper performance reproduction.",
+  "run_audits": [
+    {
+      "run_id": "gas-marl-20261021-baseline-02",
+      "status": "verified",
+      "source_commit": "0b6541eaa2f9169e6f339c89ddab1ba65cd5b696",
+      "training_seeds": [
+        0
+      ],
+      "steps": 8,
+      "all_step_exit_codes_zero": true,
+      "all_stderr_empty": true,
+      "exact_step_set_verified": true,
+      "source_snapshot_files_verified": 23,
+      "data_files_verified": 6,
+      "source_manifest_sha256": "a9e68f4cb12cc7d62842b227c00d027ff300ecf82463d0b87f7ca0d87ec336cf",
+      "dataset_manifest_sha256": "d3ce08788d3432f9700210042666ecf1b82153f12b0bbd7e0bc265667dbe8f16",
+      "original_state_sha256": "1bee49bbbfc526cea4c1ff4f4104262940d5a4f41b2fec104da1446cbb8267f9",
+      "audit_report": "results\\gas-marl-20261021-baseline-02\\analysis\\verification_multiseed.json"
+    },
+    {
+      "run_id": "gas-marl-20261022-multiseed-01",
+      "status": "verified",
+      "source_commit": "8915ae3897d11c538037d1c81ee96e1e860e39ea",
+      "training_seeds": [
+        1,
+        2
+      ],
+      "steps": 16,
+      "all_step_exit_codes_zero": true,
+      "all_stderr_empty": true,
+      "exact_step_set_verified": true,
+      "source_snapshot_files_verified": 29,
+      "data_files_verified": 6,
+      "source_manifest_sha256": "0e52cb2c73be1d84f0e34bb85a979d6aacf6aa6ee3c779108614b79b6e628aad",
+      "dataset_manifest_sha256": "d3ce08788d3432f9700210042666ecf1b82153f12b0bbd7e0bc265667dbe8f16",
+      "original_state_sha256": "8719bfafffe1c7fb114e160ed8a9bc6f3a46464fe5eecec254bfb31bd091b643",
+      "audit_report": "results\\gas-marl-20261022-multiseed-01\\analysis\\verification_multiseed.json"
+    }
+  ],
+  "per_seed": {
+    "0": {
+      "MARL": {
+        "csv_rows": 300,
+        "consecutive_epochs": 300,
+        "completed_epoch": 300,
+        "parameter_counts": {
+          "actor": 218454,
+          "critic": 207161
+        },
+        "csv_equals_log": true,
+        "checkpoint_csv_equals_file": true,
+        "weights_equal_checkpoint": true,
+        "parameters_finite": true,
+        "adam_state_complete_and_finite": true,
+        "rng_state_present_and_parseable": true,
+        "cuda_rng_states": 1,
+        "metadata": {
+          "algorithm": "MARL",
+          "workload": "lublin_256",
+          "backfill": 1,
+          "seed": 0,
+          "eta": 0.002,
+          "windows": [
+            256,
+            64,
+            24
+          ],
+          "features": [
+            8,
+            4,
+            2
+          ],
+          "traj_num": 100,
+          "semantics": "author",
+          "delay_max_jobs": 5,
+          "delay_times": [
+            300,
+            600,
+            1200,
+            1800,
+            2400,
+            3000,
+            3600
+          ],
+          "gamma": 1,
+          "lam": 0.97,
+          "clip": 0.2,
+          "updates": 8,
+          "batch_size": 256
+        },
+        "started_at": "2026-10-21T06:44:22.414834+00:00",
+        "ended_at": "2026-10-21T13:19:50.563515+00:00",
+        "elapsed_seconds": 23726.813
+      },
+      "PPO": {
+        "csv_rows": 300,
+        "consecutive_epochs": 300,
+        "completed_epoch": 300,
+        "parameter_counts": {
+          "actor": 18209,
+          "critic": 207161
+        },
+        "csv_equals_log": true,
+        "checkpoint_csv_equals_file": true,
+        "weights_equal_checkpoint": true,
+        "parameters_finite": true,
+        "adam_state_complete_and_finite": true,
+        "rng_state_present_and_parseable": true,
+        "cuda_rng_states": 1,
+        "metadata": {
+          "algorithm": "PPO",
+          "workload": "lublin_256",
+          "backfill": 1,
+          "seed": 0,
+          "eta": 0.002,
+          "windows": [
+            256,
+            64,
+            24
+          ],
+          "features": [
+            8,
+            4,
+            2
+          ],
+          "traj_num": 100,
+          "semantics": "author",
+          "delay_max_jobs": 5,
+          "delay_times": [
+            300,
+            600,
+            1200,
+            1800,
+            2400,
+            3000,
+            3600
+          ],
+          "gamma": 1,
+          "lam": 0.97,
+          "clip": 0.2,
+          "updates": 8,
+          "batch_size": 256
+        },
+        "started_at": "2026-10-21T13:19:50.570512+00:00",
+        "ended_at": "2026-10-21T20:16:06.229157+00:00",
+        "elapsed_seconds": 24974.344
+      }
+    },
+    "1": {
+      "MARL": {
+        "csv_rows": 300,
+        "consecutive_epochs": 300,
+        "completed_epoch": 300,
+        "parameter_counts": {
+          "actor": 218454,
+          "critic": 207161
+        },
+        "csv_equals_log": true,
+        "checkpoint_csv_equals_file": true,
+        "weights_equal_checkpoint": true,
+        "parameters_finite": true,
+        "adam_state_complete_and_finite": true,
+        "rng_state_present_and_parseable": true,
+        "cuda_rng_states": 1,
+        "metadata": {
+          "algorithm": "MARL",
+          "workload": "lublin_256",
+          "backfill": 1,
+          "seed": 1,
+          "eta": 0.002,
+          "windows": [
+            256,
+            64,
+            24
+          ],
+          "features": [
+            8,
+            4,
+            2
+          ],
+          "traj_num": 100,
+          "semantics": "author",
+          "delay_max_jobs": 5,
+          "delay_times": [
+            300,
+            600,
+            1200,
+            1800,
+            2400,
+            3000,
+            3600
+          ],
+          "gamma": 1,
+          "lam": 0.97,
+          "clip": 0.2,
+          "updates": 8,
+          "batch_size": 256
+        },
+        "started_at": "2026-10-22T07:20:11.053348+00:00",
+        "ended_at": "2026-10-22T13:48:17.884623+00:00",
+        "elapsed_seconds": 23285.578
+      },
+      "PPO": {
+        "csv_rows": 300,
+        "consecutive_epochs": 300,
+        "completed_epoch": 300,
+        "parameter_counts": {
+          "actor": 18209,
+          "critic": 207161
+        },
+        "csv_equals_log": true,
+        "checkpoint_csv_equals_file": true,
+        "weights_equal_checkpoint": true,
+        "parameters_finite": true,
+        "adam_state_complete_and_finite": true,
+        "rng_state_present_and_parseable": true,
+        "cuda_rng_states": 1,
+        "metadata": {
+          "algorithm": "PPO",
+          "workload": "lublin_256",
+          "backfill": 1,
+          "seed": 1,
+          "eta": 0.002,
+          "windows": [
+            256,
+            64,
+            24
+          ],
+          "features": [
+            8,
+            4,
+            2
+          ],
+          "traj_num": 100,
+          "semantics": "author",
+          "delay_max_jobs": 5,
+          "delay_times": [
+            300,
+            600,
+            1200,
+            1800,
+            2400,
+            3000,
+            3600
+          ],
+          "gamma": 1,
+          "lam": 0.97,
+          "clip": 0.2,
+          "updates": 8,
+          "batch_size": 256
+        },
+        "started_at": "2026-10-22T13:48:17.890522+00:00",
+        "ended_at": "2026-10-22T19:22:18.318029+00:00",
+        "elapsed_seconds": 20039.359
+      }
+    },
+    "2": {
+      "MARL": {
+        "csv_rows": 300,
+        "consecutive_epochs": 300,
+        "completed_epoch": 300,
+        "parameter_counts": {
+          "actor": 218454,
+          "critic": 207161
+        },
+        "csv_equals_log": true,
+        "checkpoint_csv_equals_file": true,
+        "weights_equal_checkpoint": true,
+        "parameters_finite": true,
+        "adam_state_complete_and_finite": true,
+        "rng_state_present_and_parseable": true,
+        "cuda_rng_states": 1,
+        "metadata": {
+          "algorithm": "MARL",
+          "workload": "lublin_256",
+          "backfill": 1,
+          "seed": 2,
+          "eta": 0.002,
+          "windows": [
+            256,
+            64,
+            24
+          ],
+          "features": [
+            8,
+            4,
+            2
+          ],
+          "traj_num": 100,
+          "semantics": "author",
+          "delay_max_jobs": 5,
+          "delay_times": [
+            300,
+            600,
+            1200,
+            1800,
+            2400,
+            3000,
+            3600
+          ],
+          "gamma": 1,
+          "lam": 0.97,
+          "clip": 0.2,
+          "updates": 8,
+          "batch_size": 256
+        },
+        "started_at": "2026-10-22T19:24:02.515683+00:00",
+        "ended_at": "2026-10-23T01:49:25.642791+00:00",
+        "elapsed_seconds": 23121.875
+      },
+      "PPO": {
+        "csv_rows": 300,
+        "consecutive_epochs": 300,
+        "completed_epoch": 300,
+        "parameter_counts": {
+          "actor": 18209,
+          "critic": 207161
+        },
+        "csv_equals_log": true,
+        "checkpoint_csv_equals_file": true,
+        "weights_equal_checkpoint": true,
+        "parameters_finite": true,
+        "adam_state_complete_and_finite": true,
+        "rng_state_present_and_parseable": true,
+        "cuda_rng_states": 1,
+        "metadata": {
+          "algorithm": "PPO",
+          "workload": "lublin_256",
+          "backfill": 1,
+          "seed": 2,
+          "eta": 0.002,
+          "windows": [
+            256,
+            64,
+            24
+          ],
+          "features": [
+            8,
+            4,
+            2
+          ],
+          "traj_num": 100,
+          "semantics": "author",
+          "delay_max_jobs": 5,
+          "delay_times": [
+            300,
+            600,
+            1200,
+            1800,
+            2400,
+            3000,
+            3600
+          ],
+          "gamma": 1,
+          "lam": 0.97,
+          "clip": 0.2,
+          "updates": 8,
+          "batch_size": 256
+        },
+        "started_at": "2026-10-23T01:49:25.649304+00:00",
+        "ended_at": "2026-10-23T08:47:05.369059+00:00",
+        "elapsed_seconds": 25058.391
+      }
+    }
+  },
+  "completion_times": {
+    "gas-marl-20261021-baseline-02": {
+      "started_at": "2026-10-21T06:44:02.299298+00:00",
+      "ended_at": "2026-10-21T20:18:10.442760+00:00",
+      "ended_at_china": "2026-10-22T04:18:10.442760+08:00"
+    },
+    "gas-marl-20261022-multiseed-01": {
+      "started_at": "2026-10-22T07:19:30.819279+00:00",
+      "ended_at": "2026-10-23T08:49:11.597118+00:00",
+      "ended_at_china": "2026-10-23T16:49:11.597118+08:00"
+    }
+  },
+  "checksum_list": {
+    "results\\gas-marl-20261021-baseline-02\\analysis\\verification_multiseed.json": "edd4c1b1c84845dba8da246b0b6d8ae94a12c8bd2f9fa8a13ed88b6cebc751ee",
+    "results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\models\\lublin_256\\MARL\\_actor.pkl": "48788af87fe5dbd83c42fbe4cfaf2989f1f7e488469461383cb164fb454ecbee",
+    "results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\models\\lublin_256\\MARL\\_critic.pkl": "dc27a058239d431172060b7ce7da1a336542c0b073643f47422eb989b2cd59b0",
+    "results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\models\\lublin_256\\MARL\\checkpoint.pt": "15bf0b487efe571269096651c6a2a282013793589141fb3853df10a10ad05752",
+    "results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\models\\lublin_256\\MARL\\MARL_lublin_256.csv": "405bf9634266e70d380b0bd966956b798f653171d62fe9000b61682245ee2210",
+    "results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\models\\lublin_256\\MaskablePPO\\actor.pkl": "6cf36ff60d0556e4a9c396ad739991eed2961477754cd2b269a0aa78e6168ae1",
+    "results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\models\\lublin_256\\MaskablePPO\\checkpoint.pt": "33c9c87b5b9f9cdcb708f323d960b5254c0ca812822f5562e2dd42144631076d",
+    "results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\models\\lublin_256\\MaskablePPO\\critic.pkl": "d6436497d2eb5a7c42fcf298f595e03c2536f86a5b24e5ffa7446eb2c7f2c381",
+    "results\\gas-marl-20261021-baseline-02\\baseline\\lublin_256\\seed_0\\models\\lublin_256\\MaskablePPO\\MaskablePPO_lublin_256.csv": "df1e21f3977b7cd6aba70b35c752771a360c97c3ccf1b924aab5a1b9a06f01fc",
+    "results\\gas-marl-20261022-multiseed-01\\analysis\\verification_multiseed.json": "8edf0fa472ab7964fed9fbc982597d4f76d84ef5a29d509a1aa966f8ce3d3e29",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_1\\models\\lublin_256\\MARL\\_actor.pkl": "f85c5269230327a4f23a49393cd04dd95a16638dea20a3e8ca60ca053d87860d",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_1\\models\\lublin_256\\MARL\\_critic.pkl": "c983199ed40129e79f23aee375711dce287f4252c8ec1528ed29ef45602c87f3",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_1\\models\\lublin_256\\MARL\\checkpoint.pt": "0c2b0b15cb37a43ed6dbd8a504736095d5a371594bbddd23dee19d77aa716ed5",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_1\\models\\lublin_256\\MARL\\MARL_lublin_256.csv": "ca2f073b511aada98002de825bf34ff3beb11d8833450508e21e41a685f55e4c",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_1\\models\\lublin_256\\MaskablePPO\\actor.pkl": "4ec6804402c857b4024ba39f68ae6fee51afd4c181f44de124b5828a790e2deb",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_1\\models\\lublin_256\\MaskablePPO\\checkpoint.pt": "887c71698d225a87caddeb9fbe99c150f4fc319f78d8157a002d9c6a3270c6a9",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_1\\models\\lublin_256\\MaskablePPO\\critic.pkl": "043a94c92178a865598505c28686fd30bfe615d54374585a9a8bd3c07ef073aa",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_1\\models\\lublin_256\\MaskablePPO\\MaskablePPO_lublin_256.csv": "104ac180783d492ce166cb3685c212208cc68cc913f26b402fd3f7d179fa76f8",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_2\\models\\lublin_256\\MARL\\_actor.pkl": "a0c67ab3ef5c861429dd5b30bc930b2ea9e8bf1818cefee982b92daf178b6cd4",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_2\\models\\lublin_256\\MARL\\_critic.pkl": "8d9e457c06fe4315b768c9cb08b70eb735f3dee724988c7c4c407614d52d9bf6",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_2\\models\\lublin_256\\MARL\\checkpoint.pt": "f4039cac76518eb244ff93eaa1b58dc224aa683bf64402ac2e34324077825c6a",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_2\\models\\lublin_256\\MARL\\MARL_lublin_256.csv": "ed728fc251aa6eb4c9932dc032ecd8bf0f3fb7bb7c9aeb4d35e43ea06652bd00",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_2\\models\\lublin_256\\MaskablePPO\\actor.pkl": "a772371fff5acb60510c9bfaa4e577e0ecfecaa07335e230d9a3a8b4d7c6aad7",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_2\\models\\lublin_256\\MaskablePPO\\checkpoint.pt": "2d6ff191221dc29c420f701a1982412347d90639c72b879a25355b0ff29363fc",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_2\\models\\lublin_256\\MaskablePPO\\critic.pkl": "7e008d814a8f6690a3f32b1ed903a30685911e6a41535525df6e0a9f542f2a79",
+    "results\\gas-marl-20261022-multiseed-01\\baseline\\lublin_256\\seed_2\\models\\lublin_256\\MaskablePPO\\MaskablePPO_lublin_256.csv": "c53bbf392688e01a98b5a858e3d67d5475aab411f7180021d6e23da2cdfda80b"
+  },
+  "verifier_tests": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_multiseed_verification.py -v",
+    "tests": 21,
+    "failures": 0,
+    "errors": 0
+  },
+  "limits": [
+    "CUDA RNG states are structurally checked; no global/device RNG restore or training replay was performed.",
+    "Seed0 original pipeline evaluations use legacy RNG; cross-seed analysis must use its separate paired evaluations.",
+    "Partly overlapping evaluation windows are descriptive slices, not independent training repetitions."
+  ],
+  "cross_run_source_comparison": {
+    "all_training_and_simulator_files_identical": true,
+    "training_and_simulator_files": [
+      "MARL.py",
+      "MaskablePPO.py",
+      "training_checkpoint.py",
+      "HPCSimPickJobs.py",
+      "cluster.py",
+      "greenPower.py",
+      "job.py",
+      "PowerStruc.py",
+      "configFile\\config.ini"
+    ],
+    "changed_snapshot_entries": [
+      "compare.py",
+      "requirements-reporting.txt",
+      "scripts\\build_baseline_report.py",
+      "scripts\\export_word_qa.ps1",
+      "scripts\\launch_research.ps1",
+      "scripts\\plot_baseline.py",
+      "scripts\\run_paired_evaluation.py",
+      "scripts\\run_research.py",
+      "scripts\\summarize_baseline.py",
+      "scripts\\verify_baseline.py",
+      "tests\\test_research_pipeline.py",
+      "tests\\test_training_cli.py"
+    ],
+    "newer_snapshot_contains_paired_evaluation_fix": true
+  }
+}

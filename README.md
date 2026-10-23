@@ -17,7 +17,19 @@ The research setup uses Python 3.11 and an isolated `.venv`. Install the checked
 
 Each experiment writes isolated models, logs, source snapshots, per-sequence results, and `state.json` under `results/<run-id>/`. The latest state is linked by `research/LATEST_RUN.json`. Training uses the authors' delay semantics. Evaluation separately records `author` and `paper` modes; the latter corrects only the tested Type 2 deadline event. Evaluating an author-trained model under `paper` semantics is a behavior audit, not an independently retrained improvement claim.
 
-See `research/PROTOCOL.md` for the scientific targets, numerical anchors, and evidence rules. Local weights, environment files, and large logs are excluded from Git. The research reproduction has not been declared successful until training and numerical comparison finish.
+See `research/PROTOCOL.md` for the scientific targets, numerical anchors, and evidence rules. Local weights, environment files, and large logs are excluded from Git.
+
+The bounded three-seed Lublin-256 + Green-Backfilling baseline is now complete. The [three-seed report](reports/三种子基线验证报告_GAS_MARL.md) records all six 300-epoch trainings and comparable paired evaluations. Author-mode GAS-MARL outperforms PPO in both metrics for each seed, but differs from the published numerical anchors; this does not reproduce the full paper experiment matrix or establish an innovation. Small source data and audit evidence are in `research/evidence/multiseed/`; the earlier single-seed report is retained.
+
+Read-only checks and plots for the retained local runs:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/verify_multiseed.py --run-dir results/gas-marl-20261022-multiseed-01
+.\.venv\Scripts\python.exe scripts/analyze_multiseed.py
+.\.venv\Scripts\python.exe scripts/plot_multiseed.py
+```
+
+These commands use local artifacts; trained weights are not part of the Git repository. `verify_multiseed.py` regenerates a timestamped audit report, so the packaged ledger's derived-report hashes describe the delivery-time audit, while its model/input hashes identify immutable experimental artifacts.
 
 ## Original project description
 

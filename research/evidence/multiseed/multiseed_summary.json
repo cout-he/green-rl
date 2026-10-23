@@ -1,0 +1,1016 @@
+{
+  "schema_version": "1.0",
+  "status": "validated_three_seed_paired_baseline",
+  "generated_at_utc": "2026-10-23T10:00:56.845211+00:00",
+  "workload": "lublin_256",
+  "backfill": 1,
+  "training_semantics": "author",
+  "evaluation_policy": "sample",
+  "evaluation_seed_mode": "paired",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "eta": 0.002,
+  "per_seed": [
+    {
+      "seed": 0,
+      "metric_mode": "author",
+      "algorithm": "FCFS",
+      "window_count": 10,
+      "bsld_mean": 91.0012213927649,
+      "bsld_window_sd": 34.99691595862078,
+      "reutil_mean": 0.6186178131052353,
+      "reutil_window_sd": 0.0500289313141448,
+      "reward_mean": 0.43661537031970554,
+      "reward_window_sd": 0.08837162859232119
+    },
+    {
+      "seed": 0,
+      "metric_mode": "author",
+      "algorithm": "F2",
+      "window_count": 10,
+      "bsld_mean": 55.66666703624958,
+      "bsld_window_sd": 30.731020138386477,
+      "reutil_mean": 0.591820153035898,
+      "reutil_window_sd": 0.05260377055215445,
+      "reward_mean": 0.48048681896339884,
+      "reward_window_sd": 0.07571063311678976
+    },
+    {
+      "seed": 0,
+      "metric_mode": "author",
+      "algorithm": "PPO",
+      "window_count": 10,
+      "bsld_mean": 59.978053599393874,
+      "bsld_window_sd": 17.42554484125786,
+      "reutil_mean": 0.672809505932304,
+      "reutil_window_sd": 0.042242941081471926,
+      "reward_mean": 0.5528533987335162,
+      "reward_window_sd": 0.04774573392504735
+    },
+    {
+      "seed": 0,
+      "metric_mode": "author",
+      "algorithm": "MARL",
+      "window_count": 10,
+      "bsld_mean": 23.678116749932244,
+      "bsld_window_sd": 6.29042679918114,
+      "reutil_mean": 0.7902241787060854,
+      "reutil_window_sd": 0.05276184049944211,
+      "reward_mean": 0.742867945206221,
+      "reward_window_sd": 0.04984370590854688
+    },
+    {
+      "seed": 0,
+      "metric_mode": "paper",
+      "algorithm": "FCFS",
+      "window_count": 10,
+      "bsld_mean": 91.0012213927649,
+      "bsld_window_sd": 34.99691595862078,
+      "reutil_mean": 0.6186178131052353,
+      "reutil_window_sd": 0.0500289313141448,
+      "reward_mean": 0.43661537031970554,
+      "reward_window_sd": 0.08837162859232119
+    },
+    {
+      "seed": 0,
+      "metric_mode": "paper",
+      "algorithm": "F2",
+      "window_count": 10,
+      "bsld_mean": 55.66666703624958,
+      "bsld_window_sd": 30.731020138386477,
+      "reutil_mean": 0.591820153035898,
+      "reutil_window_sd": 0.05260377055215445,
+      "reward_mean": 0.48048681896339884,
+      "reward_window_sd": 0.07571063311678976
+    },
+    {
+      "seed": 0,
+      "metric_mode": "paper",
+      "algorithm": "PPO",
+      "window_count": 10,
+      "bsld_mean": 59.978053599393874,
+      "bsld_window_sd": 17.42554484125786,
+      "reutil_mean": 0.672809505932304,
+      "reutil_window_sd": 0.042242941081471926,
+      "reward_mean": 0.5528533987335162,
+      "reward_window_sd": 0.04774573392504735
+    },
+    {
+      "seed": 0,
+      "metric_mode": "paper",
+      "algorithm": "MARL",
+      "window_count": 10,
+      "bsld_mean": 20.741920518093693,
+      "bsld_window_sd": 5.544414124080527,
+      "reutil_mean": 0.7945797364770703,
+      "reutil_window_sd": 0.05069558518533486,
+      "reward_mean": 0.7530958954408828,
+      "reward_window_sd": 0.05870512364878156
+    },
+    {
+      "seed": 1,
+      "metric_mode": "author",
+      "algorithm": "FCFS",
+      "window_count": 10,
+      "bsld_mean": 91.0012213927649,
+      "bsld_window_sd": 34.99691595862078,
+      "reutil_mean": 0.6186178131052353,
+      "reutil_window_sd": 0.0500289313141448,
+      "reward_mean": 0.43661537031970554,
+      "reward_window_sd": 0.08837162859232119
+    },
+    {
+      "seed": 1,
+      "metric_mode": "author",
+      "algorithm": "F2",
+      "window_count": 10,
+      "bsld_mean": 55.66666703624958,
+      "bsld_window_sd": 30.731020138386477,
+      "reutil_mean": 0.591820153035898,
+      "reutil_window_sd": 0.05260377055215445,
+      "reward_mean": 0.48048681896339884,
+      "reward_window_sd": 0.07571063311678976
+    },
+    {
+      "seed": 1,
+      "metric_mode": "author",
+      "algorithm": "PPO",
+      "window_count": 10,
+      "bsld_mean": 60.75538016022796,
+      "bsld_window_sd": 26.398808018912113,
+      "reutil_mean": 0.6721082574700296,
+      "reutil_window_sd": 0.05155911268504526,
+      "reward_mean": 0.5505974971495736,
+      "reward_window_sd": 0.08816551108924717
+    },
+    {
+      "seed": 1,
+      "metric_mode": "author",
+      "algorithm": "MARL",
+      "window_count": 10,
+      "bsld_mean": 29.619063206777273,
+      "bsld_window_sd": 6.679541767087734,
+      "reutil_mean": 0.7480561481463999,
+      "reutil_window_sd": 0.05385942290273558,
+      "reward_mean": 0.6888180217328453,
+      "reward_window_sd": 0.04928108426894858
+    },
+    {
+      "seed": 1,
+      "metric_mode": "paper",
+      "algorithm": "FCFS",
+      "window_count": 10,
+      "bsld_mean": 91.0012213927649,
+      "bsld_window_sd": 34.99691595862078,
+      "reutil_mean": 0.6186178131052353,
+      "reutil_window_sd": 0.0500289313141448,
+      "reward_mean": 0.43661537031970554,
+      "reward_window_sd": 0.08837162859232119
+    },
+    {
+      "seed": 1,
+      "metric_mode": "paper",
+      "algorithm": "F2",
+      "window_count": 10,
+      "bsld_mean": 55.66666703624958,
+      "bsld_window_sd": 30.731020138386477,
+      "reutil_mean": 0.591820153035898,
+      "reutil_window_sd": 0.05260377055215445,
+      "reward_mean": 0.48048681896339884,
+      "reward_window_sd": 0.07571063311678976
+    },
+    {
+      "seed": 1,
+      "metric_mode": "paper",
+      "algorithm": "PPO",
+      "window_count": 10,
+      "bsld_mean": 60.75538016022796,
+      "bsld_window_sd": 26.398808018912113,
+      "reutil_mean": 0.6721082574700296,
+      "reutil_window_sd": 0.05155911268504526,
+      "reward_mean": 0.5505974971495736,
+      "reward_window_sd": 0.08816551108924717
+    },
+    {
+      "seed": 1,
+      "metric_mode": "paper",
+      "algorithm": "MARL",
+      "window_count": 10,
+      "bsld_mean": 42.65113299341538,
+      "bsld_window_sd": 40.04668672439138,
+      "reutil_mean": 0.742816757085766,
+      "reutil_window_sd": 0.06138804700504989,
+      "reward_mean": 0.6575144910989352,
+      "reward_window_sd": 0.11520527383719775
+    },
+    {
+      "seed": 2,
+      "metric_mode": "author",
+      "algorithm": "FCFS",
+      "window_count": 10,
+      "bsld_mean": 91.0012213927649,
+      "bsld_window_sd": 34.99691595862078,
+      "reutil_mean": 0.6186178131052353,
+      "reutil_window_sd": 0.0500289313141448,
+      "reward_mean": 0.43661537031970554,
+      "reward_window_sd": 0.08837162859232119
+    },
+    {
+      "seed": 2,
+      "metric_mode": "author",
+      "algorithm": "F2",
+      "window_count": 10,
+      "bsld_mean": 55.66666703624958,
+      "bsld_window_sd": 30.731020138386477,
+      "reutil_mean": 0.591820153035898,
+      "reutil_window_sd": 0.05260377055215445,
+      "reward_mean": 0.48048681896339884,
+      "reward_window_sd": 0.07571063311678976
+    },
+    {
+      "seed": 2,
+      "metric_mode": "author",
+      "algorithm": "PPO",
+      "window_count": 10,
+      "bsld_mean": 56.76708463529429,
+      "bsld_window_sd": 19.8944684875537,
+      "reutil_mean": 0.6762258347396471,
+      "reutil_window_sd": 0.04658178527642315,
+      "reward_mean": 0.5626916654690586,
+      "reward_window_sd": 0.06566001245151641
+    },
+    {
+      "seed": 2,
+      "metric_mode": "author",
+      "algorithm": "MARL",
+      "window_count": 10,
+      "bsld_mean": 29.79574239911941,
+      "bsld_window_sd": 10.52229039927995,
+      "reutil_mean": 0.7821030967359637,
+      "reutil_window_sd": 0.05358183641326875,
+      "reward_mean": 0.7225116119377248,
+      "reward_window_sd": 0.06505572603603735
+    },
+    {
+      "seed": 2,
+      "metric_mode": "paper",
+      "algorithm": "FCFS",
+      "window_count": 10,
+      "bsld_mean": 91.0012213927649,
+      "bsld_window_sd": 34.99691595862078,
+      "reutil_mean": 0.6186178131052353,
+      "reutil_window_sd": 0.0500289313141448,
+      "reward_mean": 0.43661537031970554,
+      "reward_window_sd": 0.08837162859232119
+    },
+    {
+      "seed": 2,
+      "metric_mode": "paper",
+      "algorithm": "F2",
+      "window_count": 10,
+      "bsld_mean": 55.66666703624958,
+      "bsld_window_sd": 30.731020138386477,
+      "reutil_mean": 0.591820153035898,
+      "reutil_window_sd": 0.05260377055215445,
+      "reward_mean": 0.48048681896339884,
+      "reward_window_sd": 0.07571063311678976
+    },
+    {
+      "seed": 2,
+      "metric_mode": "paper",
+      "algorithm": "PPO",
+      "window_count": 10,
+      "bsld_mean": 56.76708463529429,
+      "bsld_window_sd": 19.8944684875537,
+      "reutil_mean": 0.6762258347396471,
+      "reutil_window_sd": 0.04658178527642315,
+      "reward_mean": 0.5626916654690586,
+      "reward_window_sd": 0.06566001245151641
+    },
+    {
+      "seed": 2,
+      "metric_mode": "paper",
+      "algorithm": "MARL",
+      "window_count": 10,
+      "bsld_mean": 29.5825325209569,
+      "bsld_window_sd": 10.071807371227427,
+      "reutil_mean": 0.7846637202449277,
+      "reutil_window_sd": 0.06453206384366879,
+      "reward_mean": 0.7254986552030139,
+      "reward_window_sd": 0.06491787781001508
+    }
+  ],
+  "aggregate": [
+    {
+      "metric_mode": "author",
+      "algorithm": "FCFS",
+      "seed_count": 3,
+      "bsld_mean": 91.0012213927649,
+      "bsld_seed_sd": 0.0,
+      "bsld_min_seed_mean": 91.0012213927649,
+      "bsld_max_seed_mean": 91.0012213927649,
+      "reutil_mean": 0.6186178131052353,
+      "reutil_seed_sd": 0.0,
+      "reutil_min_seed_mean": 0.6186178131052353,
+      "reutil_max_seed_mean": 0.6186178131052353,
+      "reward_mean": 0.43661537031970554,
+      "reward_seed_sd": 0.0,
+      "reward_min_seed_mean": 0.43661537031970554,
+      "reward_max_seed_mean": 0.43661537031970554
+    },
+    {
+      "metric_mode": "author",
+      "algorithm": "F2",
+      "seed_count": 3,
+      "bsld_mean": 55.66666703624958,
+      "bsld_seed_sd": 0.0,
+      "bsld_min_seed_mean": 55.66666703624958,
+      "bsld_max_seed_mean": 55.66666703624958,
+      "reutil_mean": 0.591820153035898,
+      "reutil_seed_sd": 0.0,
+      "reutil_min_seed_mean": 0.591820153035898,
+      "reutil_max_seed_mean": 0.591820153035898,
+      "reward_mean": 0.48048681896339884,
+      "reward_seed_sd": 0.0,
+      "reward_min_seed_mean": 0.48048681896339884,
+      "reward_max_seed_mean": 0.48048681896339884
+    },
+    {
+      "metric_mode": "author",
+      "algorithm": "PPO",
+      "seed_count": 3,
+      "bsld_mean": 59.16683946497204,
+      "bsld_seed_sd": 2.114279209911928,
+      "bsld_min_seed_mean": 56.76708463529429,
+      "bsld_max_seed_mean": 60.75538016022796,
+      "reutil_mean": 0.6737145327139936,
+      "reutil_seed_sd": 0.0022029334419131586,
+      "reutil_min_seed_mean": 0.6721082574700296,
+      "reutil_max_seed_mean": 0.6762258347396471,
+      "reward_mean": 0.5553808537840494,
+      "reward_seed_sd": 0.0064310379107386595,
+      "reward_min_seed_mean": 0.5505974971495736,
+      "reward_max_seed_mean": 0.5626916654690586
+    },
+    {
+      "metric_mode": "author",
+      "algorithm": "MARL",
+      "seed_count": 3,
+      "bsld_mean": 27.69764078527631,
+      "bsld_seed_sd": 3.4821306677497246,
+      "bsld_min_seed_mean": 23.678116749932244,
+      "bsld_max_seed_mean": 29.79574239911941,
+      "reutil_mean": 0.7734611411961496,
+      "reutil_seed_sd": 0.02237293559157437,
+      "reutil_min_seed_mean": 0.7480561481463999,
+      "reutil_max_seed_mean": 0.7902241787060854,
+      "reward_mean": 0.7180658596255971,
+      "reward_seed_sd": 0.027297840428961294,
+      "reward_min_seed_mean": 0.6888180217328453,
+      "reward_max_seed_mean": 0.742867945206221
+    },
+    {
+      "metric_mode": "paper",
+      "algorithm": "FCFS",
+      "seed_count": 3,
+      "bsld_mean": 91.0012213927649,
+      "bsld_seed_sd": 0.0,
+      "bsld_min_seed_mean": 91.0012213927649,
+      "bsld_max_seed_mean": 91.0012213927649,
+      "reutil_mean": 0.6186178131052353,
+      "reutil_seed_sd": 0.0,
+      "reutil_min_seed_mean": 0.6186178131052353,
+      "reutil_max_seed_mean": 0.6186178131052353,
+      "reward_mean": 0.43661537031970554,
+      "reward_seed_sd": 0.0,
+      "reward_min_seed_mean": 0.43661537031970554,
+      "reward_max_seed_mean": 0.43661537031970554
+    },
+    {
+      "metric_mode": "paper",
+      "algorithm": "F2",
+      "seed_count": 3,
+      "bsld_mean": 55.66666703624958,
+      "bsld_seed_sd": 0.0,
+      "bsld_min_seed_mean": 55.66666703624958,
+      "bsld_max_seed_mean": 55.66666703624958,
+      "reutil_mean": 0.591820153035898,
+      "reutil_seed_sd": 0.0,
+      "reutil_min_seed_mean": 0.591820153035898,
+      "reutil_max_seed_mean": 0.591820153035898,
+      "reward_mean": 0.48048681896339884,
+      "reward_seed_sd": 0.0,
+      "reward_min_seed_mean": 0.48048681896339884,
+      "reward_max_seed_mean": 0.48048681896339884
+    },
+    {
+      "metric_mode": "paper",
+      "algorithm": "PPO",
+      "seed_count": 3,
+      "bsld_mean": 59.16683946497204,
+      "bsld_seed_sd": 2.114279209911928,
+      "bsld_min_seed_mean": 56.76708463529429,
+      "bsld_max_seed_mean": 60.75538016022796,
+      "reutil_mean": 0.6737145327139936,
+      "reutil_seed_sd": 0.0022029334419131586,
+      "reutil_min_seed_mean": 0.6721082574700296,
+      "reutil_max_seed_mean": 0.6762258347396471,
+      "reward_mean": 0.5553808537840494,
+      "reward_seed_sd": 0.0064310379107386595,
+      "reward_min_seed_mean": 0.5505974971495736,
+      "reward_max_seed_mean": 0.5626916654690586
+    },
+    {
+      "metric_mode": "paper",
+      "algorithm": "MARL",
+      "seed_count": 3,
+      "bsld_mean": 30.99186201082199,
+      "bsld_seed_sd": 11.022388807806156,
+      "bsld_min_seed_mean": 20.741920518093693,
+      "bsld_max_seed_mean": 42.65113299341538,
+      "reutil_mean": 0.7740200712692547,
+      "reutil_seed_sd": 0.02747393230872051,
+      "reutil_min_seed_mean": 0.742816757085766,
+      "reutil_max_seed_mean": 0.7945797364770703,
+      "reward_mean": 0.7120363472476107,
+      "reward_seed_sd": 0.04919224040038537,
+      "reward_min_seed_mean": 0.6575144910989352,
+      "reward_max_seed_mean": 0.7530958954408828
+    }
+  ],
+  "paired_seed_comparisons": [
+    {
+      "metric_mode": "author",
+      "algorithm": "MARL",
+      "reference_algorithm": "PPO",
+      "seed_count": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "bsld_difference": -36.29993684946163,
+          "reutil_difference": 0.11741467277378137,
+          "reward_difference": 0.19001454647270477,
+          "bsld_relative_percent": -60.52203209513366,
+          "reutil_percentage_points": 11.741467277378137
+        },
+        {
+          "seed": 1,
+          "bsld_difference": -31.136316953450685,
+          "reutil_difference": 0.07594789067637031,
+          "reward_difference": 0.13822052458327172,
+          "bsld_relative_percent": -51.24865793175191,
+          "reutil_percentage_points": 7.594789067637031
+        },
+        {
+          "seed": 2,
+          "bsld_difference": -26.97134223617488,
+          "reutil_difference": 0.10587726199631653,
+          "reward_difference": 0.15981994646866626,
+          "bsld_relative_percent": -47.51229063365666,
+          "reutil_percentage_points": 10.587726199631653
+        }
+      ],
+      "bsld_difference_mean": -31.469198679695733,
+      "bsld_difference_seed_sd": 4.673197732550117,
+      "reutil_difference_mean": 0.09974660848215607,
+      "reutil_difference_seed_sd": 0.021402387454710715,
+      "reward_difference_mean": 0.16268500584154758,
+      "reward_difference_seed_sd": 0.026015603006241637,
+      "bsld_relative_percent_mean": -53.09432688684741,
+      "bsld_relative_percent_seed_sd": 6.698373955108129,
+      "reutil_percentage_points_mean": 9.974660848215606,
+      "reutil_percentage_points_seed_sd": 2.1402387454710716,
+      "both_metrics_better_seed_count": 3
+    },
+    {
+      "metric_mode": "paper",
+      "algorithm": "MARL",
+      "reference_algorithm": "PPO",
+      "seed_count": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "bsld_difference": -39.23613308130018,
+          "reutil_difference": 0.12177023054476621,
+          "reward_difference": 0.2002424967073666,
+          "bsld_relative_percent": -65.41748310701549,
+          "reutil_percentage_points": 12.17702305447662
+        },
+        {
+          "seed": 1,
+          "bsld_difference": -18.104247166812577,
+          "reutil_difference": 0.07070849961573644,
+          "reward_difference": 0.1069169939493616,
+          "bsld_relative_percent": -29.798590872227127,
+          "reutil_percentage_points": 7.070849961573645
+        },
+        {
+          "seed": 2,
+          "bsld_difference": -27.18455211433739,
+          "reutil_difference": 0.10843788550528055,
+          "reward_difference": 0.16280698973395535,
+          "bsld_relative_percent": -47.887877788664355,
+          "reutil_percentage_points": 10.843788550528055
+        }
+      ],
+      "bsld_difference_mean": -28.17497745415005,
+      "bsld_difference_seed_sd": 10.600700794807727,
+      "reutil_difference_mean": 0.10030553855526107,
+      "reutil_difference_seed_sd": 0.026484455659004532,
+      "reward_difference_mean": 0.1566554934635612,
+      "reward_difference_seed_sd": 0.04696587107711412,
+      "bsld_relative_percent_mean": -47.70131725596899,
+      "bsld_relative_percent_seed_sd": 17.810178961274822,
+      "reutil_percentage_points_mean": 10.030553855526106,
+      "reutil_percentage_points_seed_sd": 2.648445565900453,
+      "both_metrics_better_seed_count": 3
+    }
+  ],
+  "metric_mode_sensitivity": [
+    {
+      "algorithm": "FCFS",
+      "comparison": "paper_minus_author",
+      "seed_count": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "bsld_difference": 0.0,
+          "reutil_difference": 0.0,
+          "reward_difference": 0.0,
+          "bsld_relative_percent": 0.0,
+          "reutil_percentage_points": 0.0
+        },
+        {
+          "seed": 1,
+          "bsld_difference": 0.0,
+          "reutil_difference": 0.0,
+          "reward_difference": 0.0,
+          "bsld_relative_percent": 0.0,
+          "reutil_percentage_points": 0.0
+        },
+        {
+          "seed": 2,
+          "bsld_difference": 0.0,
+          "reutil_difference": 0.0,
+          "reward_difference": 0.0,
+          "bsld_relative_percent": 0.0,
+          "reutil_percentage_points": 0.0
+        }
+      ],
+      "bsld_difference_mean": 0.0,
+      "bsld_difference_seed_sd": 0.0,
+      "reutil_difference_mean": 0.0,
+      "reutil_difference_seed_sd": 0.0,
+      "reward_difference_mean": 0.0,
+      "reward_difference_seed_sd": 0.0,
+      "bsld_relative_percent_mean": 0.0,
+      "bsld_relative_percent_seed_sd": 0.0,
+      "reutil_percentage_points_mean": 0.0,
+      "reutil_percentage_points_seed_sd": 0.0,
+      "both_metrics_better_seed_count": 0
+    },
+    {
+      "algorithm": "F2",
+      "comparison": "paper_minus_author",
+      "seed_count": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "bsld_difference": 0.0,
+          "reutil_difference": 0.0,
+          "reward_difference": 0.0,
+          "bsld_relative_percent": 0.0,
+          "reutil_percentage_points": 0.0
+        },
+        {
+          "seed": 1,
+          "bsld_difference": 0.0,
+          "reutil_difference": 0.0,
+          "reward_difference": 0.0,
+          "bsld_relative_percent": 0.0,
+          "reutil_percentage_points": 0.0
+        },
+        {
+          "seed": 2,
+          "bsld_difference": 0.0,
+          "reutil_difference": 0.0,
+          "reward_difference": 0.0,
+          "bsld_relative_percent": 0.0,
+          "reutil_percentage_points": 0.0
+        }
+      ],
+      "bsld_difference_mean": 0.0,
+      "bsld_difference_seed_sd": 0.0,
+      "reutil_difference_mean": 0.0,
+      "reutil_difference_seed_sd": 0.0,
+      "reward_difference_mean": 0.0,
+      "reward_difference_seed_sd": 0.0,
+      "bsld_relative_percent_mean": 0.0,
+      "bsld_relative_percent_seed_sd": 0.0,
+      "reutil_percentage_points_mean": 0.0,
+      "reutil_percentage_points_seed_sd": 0.0,
+      "both_metrics_better_seed_count": 0
+    },
+    {
+      "algorithm": "PPO",
+      "comparison": "paper_minus_author",
+      "seed_count": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "bsld_difference": 0.0,
+          "reutil_difference": 0.0,
+          "reward_difference": 0.0,
+          "bsld_relative_percent": 0.0,
+          "reutil_percentage_points": 0.0
+        },
+        {
+          "seed": 1,
+          "bsld_difference": 0.0,
+          "reutil_difference": 0.0,
+          "reward_difference": 0.0,
+          "bsld_relative_percent": 0.0,
+          "reutil_percentage_points": 0.0
+        },
+        {
+          "seed": 2,
+          "bsld_difference": 0.0,
+          "reutil_difference": 0.0,
+          "reward_difference": 0.0,
+          "bsld_relative_percent": 0.0,
+          "reutil_percentage_points": 0.0
+        }
+      ],
+      "bsld_difference_mean": 0.0,
+      "bsld_difference_seed_sd": 0.0,
+      "reutil_difference_mean": 0.0,
+      "reutil_difference_seed_sd": 0.0,
+      "reward_difference_mean": 0.0,
+      "reward_difference_seed_sd": 0.0,
+      "bsld_relative_percent_mean": 0.0,
+      "bsld_relative_percent_seed_sd": 0.0,
+      "reutil_percentage_points_mean": 0.0,
+      "reutil_percentage_points_seed_sd": 0.0,
+      "both_metrics_better_seed_count": 0
+    },
+    {
+      "algorithm": "MARL",
+      "comparison": "paper_minus_author",
+      "seed_count": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "bsld_difference": -2.936196231838551,
+          "reutil_difference": 0.004355557770984841,
+          "reward_difference": 0.010227950234661831,
+          "bsld_relative_percent": -12.400463528616367,
+          "reutil_percentage_points": 0.43555577709848414
+        },
+        {
+          "seed": 1,
+          "bsld_difference": 13.032069786638107,
+          "reutil_difference": -0.005239391060633869,
+          "reward_difference": -0.031303530633910115,
+          "bsld_relative_percent": 43.998926284934555,
+          "reutil_percentage_points": -0.5239391060633869
+        },
+        {
+          "seed": 2,
+          "bsld_difference": -0.21320987816250891,
+          "reutil_difference": 0.0025606235089640217,
+          "reward_difference": 0.002987043265289091,
+          "bsld_relative_percent": -0.7155716253232525,
+          "reutil_percentage_points": 0.25606235089640217
+        }
+      ],
+      "bsld_difference_mean": 3.2942212255456824,
+      "bsld_difference_seed_sd": 8.54241971689836,
+      "reutil_difference_mean": 0.0005589300731049981,
+      "reutil_difference_seed_sd": 0.005101062950867804,
+      "reward_difference_mean": -0.006029512377986397,
+      "reward_difference_seed_sd": 0.022185348375343392,
+      "bsld_relative_percent_mean": 10.29429704366498,
+      "bsld_relative_percent_seed_sd": 29.768031492130856,
+      "reutil_percentage_points_mean": 0.05589300731049981,
+      "reutil_percentage_points_seed_sd": 0.5101062950867803,
+      "both_metrics_better_seed_count": 2
+    }
+  ],
+  "paper_anchors": {
+    "MARL": {
+      "bsld": 31.738,
+      "reutil": 0.8154,
+      "source": "research/PROTOCOL.md, Table 3/4",
+      "author_bsld_difference": -4.04035921472369,
+      "author_bsld_relative_percent": -12.730352305512916,
+      "author_reutil_percentage_points": -4.193885880385039
+    },
+    "PPO": {
+      "bsld": 56.358,
+      "reutil": 0.6767,
+      "source": "research/PROTOCOL.md, Table 3/4",
+      "author_bsld_difference": 2.8088394649720456,
+      "author_bsld_relative_percent": 4.9839232495334285,
+      "author_reutil_percentage_points": -0.2985467286006349
+    }
+  },
+  "training": [
+    {
+      "seed": 0,
+      "algorithm": "MARL",
+      "completed_epochs": 300,
+      "source": "results/gas-marl-20261021-baseline-02/baseline/lublin_256/seed_0/models/lublin_256/MARL/MARL_lublin_256.csv",
+      "evidence_file": "training_seed0_MARL.csv",
+      "columns": [
+        "reward",
+        "reutil",
+        "negative_bsld"
+      ],
+      "final_epoch": {
+        "reward": 0.6890113572444715,
+        "reutil": 0.7435535555256095,
+        "bsld": 27.27109914056912
+      }
+    },
+    {
+      "seed": 0,
+      "algorithm": "PPO",
+      "completed_epochs": 300,
+      "source": "results/gas-marl-20261021-baseline-02/baseline/lublin_256/seed_0/models/lublin_256/MaskablePPO/MaskablePPO_lublin_256.csv",
+      "evidence_file": "training_seed0_PPO.csv",
+      "columns": [
+        "reward",
+        "reutil",
+        "negative_bsld"
+      ],
+      "final_epoch": {
+        "reward": 0.5070495590777093,
+        "reutil": 0.6128920827100042,
+        "bsld": 52.92126181614739
+      }
+    },
+    {
+      "seed": 1,
+      "algorithm": "MARL",
+      "completed_epochs": 300,
+      "source": "results/gas-marl-20261022-multiseed-01/baseline/lublin_256/seed_1/models/lublin_256/MARL/MARL_lublin_256.csv",
+      "evidence_file": "training_seed1_MARL.csv",
+      "columns": [
+        "reward",
+        "reutil",
+        "negative_bsld"
+      ],
+      "final_epoch": {
+        "reward": 0.656815312698357,
+        "reutil": 0.7117862626270423,
+        "bsld": 27.485474964342405
+      }
+    },
+    {
+      "seed": 1,
+      "algorithm": "PPO",
+      "completed_epochs": 300,
+      "source": "results/gas-marl-20261022-multiseed-01/baseline/lublin_256/seed_1/models/lublin_256/MaskablePPO/MaskablePPO_lublin_256.csv",
+      "evidence_file": "training_seed1_PPO.csv",
+      "columns": [
+        "reward",
+        "reutil",
+        "negative_bsld"
+      ],
+      "final_epoch": {
+        "reward": 0.5107362157911257,
+        "reutil": 0.6270327114388783,
+        "bsld": 58.14824782387641
+      }
+    },
+    {
+      "seed": 2,
+      "algorithm": "MARL",
+      "completed_epochs": 300,
+      "source": "results/gas-marl-20261022-multiseed-01/baseline/lublin_256/seed_2/models/lublin_256/MARL/MARL_lublin_256.csv",
+      "evidence_file": "training_seed2_MARL.csv",
+      "columns": [
+        "reward",
+        "reutil",
+        "negative_bsld"
+      ],
+      "final_epoch": {
+        "reward": 0.6663119409754863,
+        "reutil": 0.7194999039827603,
+        "bsld": 26.59398150363709
+      }
+    },
+    {
+      "seed": 2,
+      "algorithm": "PPO",
+      "completed_epochs": 300,
+      "source": "results/gas-marl-20261022-multiseed-01/baseline/lublin_256/seed_2/models/lublin_256/MaskablePPO/MaskablePPO_lublin_256.csv",
+      "evidence_file": "training_seed2_PPO.csv",
+      "columns": [
+        "reward",
+        "reutil",
+        "negative_bsld"
+      ],
+      "final_epoch": {
+        "reward": 0.5274264843412504,
+        "reutil": 0.6262712338037131,
+        "bsld": 49.422374731231315
+      }
+    }
+  ],
+  "provenance": {
+    "training_runs": [
+      {
+        "run_dir": "results/gas-marl-20261021-baseline-02",
+        "training_seeds": [
+          0
+        ],
+        "status": "completed",
+        "git_commit": "0b6541eaa2f9169e6f339c89ddab1ba65cd5b696",
+        "git_status": "",
+        "started_at": "2026-10-21T06:44:02.299298+00:00",
+        "ended_at": "2026-10-21T20:18:10.442760+00:00",
+        "completed_step_count": 8
+      },
+      {
+        "run_dir": "results/gas-marl-20261022-multiseed-01",
+        "training_seeds": [
+          1,
+          2
+        ],
+        "status": "completed",
+        "git_commit": "8915ae3897d11c538037d1c81ee96e1e860e39ea",
+        "git_status": "",
+        "started_at": "2026-10-22T07:19:30.819279+00:00",
+        "ended_at": "2026-10-23T08:49:11.597118+00:00",
+        "completed_step_count": 16
+      }
+    ],
+    "evaluation_sources": [
+      {
+        "seed": 0,
+        "metric_mode": "author",
+        "source_dir": "results/gas-marl-20261022-paired-01/author",
+        "evidence_prefix": "seed0_author"
+      },
+      {
+        "seed": 0,
+        "metric_mode": "paper",
+        "source_dir": "results/gas-marl-20261022-paired-01/paper",
+        "evidence_prefix": "seed0_paper"
+      },
+      {
+        "seed": 1,
+        "metric_mode": "author",
+        "source_dir": "results/gas-marl-20261022-multiseed-01/baseline/lublin_256/seed_1/evaluation/author",
+        "evidence_prefix": "seed1_author"
+      },
+      {
+        "seed": 1,
+        "metric_mode": "paper",
+        "source_dir": "results/gas-marl-20261022-multiseed-01/baseline/lublin_256/seed_1/evaluation/paper",
+        "evidence_prefix": "seed1_paper"
+      },
+      {
+        "seed": 2,
+        "metric_mode": "author",
+        "source_dir": "results/gas-marl-20261022-multiseed-01/baseline/lublin_256/seed_2/evaluation/author",
+        "evidence_prefix": "seed2_author"
+      },
+      {
+        "seed": 2,
+        "metric_mode": "paper",
+        "source_dir": "results/gas-marl-20261022-multiseed-01/baseline/lublin_256/seed_2/evaluation/paper",
+        "evidence_prefix": "seed2_paper"
+      }
+    ],
+    "seed0_recorded_model_sha256": {
+      "baseline/lublin_256/seed_0/models/lublin_256/MARL/_actor.pkl": "48788af87fe5dbd83c42fbe4cfaf2989f1f7e488469461383cb164fb454ecbee",
+      "baseline/lublin_256/seed_0/models/lublin_256/MARL/_critic.pkl": "dc27a058239d431172060b7ce7da1a336542c0b073643f47422eb989b2cd59b0",
+      "baseline/lublin_256/seed_0/models/lublin_256/MaskablePPO/actor.pkl": "6cf36ff60d0556e4a9c396ad739991eed2961477754cd2b269a0aa78e6168ae1",
+      "baseline/lublin_256/seed_0/models/lublin_256/MaskablePPO/critic.pkl": "d6436497d2eb5a7c42fcf298f595e03c2536f86a5b24e5ffa7446eb2c7f2c381"
+    },
+    "input_sha256_file": "input_sha256.json",
+    "evidence_sha256_file": "evidence_sha256.json",
+    "path_convention": "Original input paths relative to repository root; evidence filenames relative to this directory.",
+    "metadata_copies": "model_root normalized to repository-relative paths; input hashes identify the unmodified originals."
+  },
+  "validation": {
+    "per_window_reward_equation": true,
+    "result_csv_equals_window_means": true,
+    "per_window_policy_seed_derivation": true,
+    "all_training_csv_epochs": 300,
+    "author_paper_exact_control_window_pairs": 90,
+    "evaluation_row_count": 240,
+    "training_csv_count": 6,
+    "model_tensor_validation": "separate independent audit; this tool does not load weights"
+  },
+  "window_dependence": {
+    "starts": [
+      6567,
+      7146,
+      919,
+      4498,
+      8632,
+      8217,
+      6890,
+      5225,
+      8064,
+      6122
+    ],
+    "sequence_length": 1024,
+    "overlap_pair_count": 11,
+    "overlap_pairs": [
+      {
+        "first_window_index": 1,
+        "second_window_index": 2,
+        "first_start": 6567,
+        "second_start": 7146,
+        "overlapping_jobs": 445
+      },
+      {
+        "first_window_index": 1,
+        "second_window_index": 7,
+        "first_start": 6567,
+        "second_start": 6890,
+        "overlapping_jobs": 701
+      },
+      {
+        "first_window_index": 1,
+        "second_window_index": 10,
+        "first_start": 6567,
+        "second_start": 6122,
+        "overlapping_jobs": 579
+      },
+      {
+        "first_window_index": 2,
+        "second_window_index": 7,
+        "first_start": 7146,
+        "second_start": 6890,
+        "overlapping_jobs": 768
+      },
+      {
+        "first_window_index": 2,
+        "second_window_index": 9,
+        "first_start": 7146,
+        "second_start": 8064,
+        "overlapping_jobs": 106
+      },
+      {
+        "first_window_index": 4,
+        "second_window_index": 8,
+        "first_start": 4498,
+        "second_start": 5225,
+        "overlapping_jobs": 297
+      },
+      {
+        "first_window_index": 5,
+        "second_window_index": 6,
+        "first_start": 8632,
+        "second_start": 8217,
+        "overlapping_jobs": 609
+      },
+      {
+        "first_window_index": 5,
+        "second_window_index": 9,
+        "first_start": 8632,
+        "second_start": 8064,
+        "overlapping_jobs": 456
+      },
+      {
+        "first_window_index": 6,
+        "second_window_index": 9,
+        "first_start": 8217,
+        "second_start": 8064,
+        "overlapping_jobs": 871
+      },
+      {
+        "first_window_index": 7,
+        "second_window_index": 10,
+        "first_start": 6890,
+        "second_start": 6122,
+        "overlapping_jobs": 256
+      },
+      {
+        "first_window_index": 8,
+        "second_window_index": 10,
+        "first_start": 5225,
+        "second_start": 6122,
+        "overlapping_jobs": 127
+      }
+    ]
+  },
+  "statistical_unit": "One seed's mean over the same ten fixed windows; across-seed sample SD uses ddof=1 and n=3.",
+  "caveats": [
+    "Training seed and evaluation base seed share the same value. Across-seed variation is end-to-end random variation, not isolated training variance.",
+    "Ten fixed evaluation windows include 11 overlapping pairs; they are descriptive slices, not 30 independent replicates.",
+    "FCFS and F2 are deterministic controls; their repeated seed records are not independently trained policies.",
+    "Paper mode evaluates author-trained fixed models with corrected delay semantics; it is sensitivity analysis, not a retrained algorithm or an innovation.",
+    "Seed-level MARL-minus-PPO and paper-minus-author differences are paired descriptively. Three seeds do not establish significance or universal improvement.",
+    "Only paired seed-zero reevaluation is included. Legacy seed-zero evaluation and best training epochs are excluded.",
+    "Positive BSLD differences mean slower; positive ReUtil differences mean higher renewable utilization."
+  ]
+}

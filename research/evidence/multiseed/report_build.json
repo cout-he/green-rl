@@ -1,0 +1,10 @@
+{
+  "status": "visual_qa_passed",
+  "report": "reports/三种子基线验证报告_GAS_MARL.docx",
+  "inputs_sha256": {
+    "research/evidence/multiseed/multiseed_summary.json": "b1592d771fb57eda701ec1569cc826beee33ee44eb3825c6ffe65d081e7cae4a",
+    "research/evidence/multiseed/training_verification.json": "a1e6eec2b638bf5d1580673040a67e2a763d95d57bdef6e9b7aebdc215f7af0b"
+  },
+  "pages": 4,
+  "report_sha256": "772817b42ded5c90b888f2495225fb31fc99e2ea0d5eb605ac0577cdafc576b3"
+}

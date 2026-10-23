@@ -1,0 +1,40 @@
+{
+  "status": "verified_delivery",
+  "verified_at_utc": "2026-10-23T10:07:06.689994+00:00",
+  "tests": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
+    "passed": 75,
+    "failed": 0,
+    "elapsed_seconds": 11.159,
+    "execution": "normal Windows user permissions; sandbox taskkill credential errors avoided without source changes"
+  },
+  "input_hashes_verified": 35,
+  "evaluation_evidence_hashes_verified": 31,
+  "training_ledger_hashes_verified": 26,
+  "word_visual_qa": {
+    "pages": 4,
+    "renderer": "independent hidden read-only Microsoft Word export then bundled pypdfium2",
+    "all_pages_inspected": true,
+    "issues": []
+  },
+  "figures": {
+    "all_7_panels_inspected": true,
+    "pdf_minimum_text_pt": 7,
+    "source_preflight": {
+      "PASS": 19,
+      "WARN": 1,
+      "FAIL": 0
+    },
+    "warning": "Unrequested TIFF omitted; editable PDF/SVG plus600dpi PNG present"
+  },
+  "report_sha256": "772817b42ded5c90b888f2495225fb31fc99e2ea0d5eb605ac0577cdafc576b3",
+  "review_findings_resolved": [
+    "Markdown newline headers normalized within cells",
+    "Derived audit report hashes refreshed after root independently reran verification"
+  ],
+  "limits": [
+    "Only Lublin-256 with Green-Backfilling",
+    "No significance or full paper numerical reproduction claim",
+    "Innovation pilot not yet executed"
+  ]
+}
