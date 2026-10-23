@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-10-23T10:07:06.694504+00:00",
-  "phase": "innovation_screening_and_bounded_pilot",
+  "updated_at_utc": "2026-10-23T12:10:29.508979+00:00",
+  "phase": "forecast_pilot_ready",
   "baseline_status": "three_seed_lublin_green_backfilling_verified",
   "training_seeds": [
     0,
@@ -10,8 +10,9 @@
   "active_training": null,
   "report": "reports/三种子基线验证报告_GAS_MARL.docx",
   "evidence": "research/evidence/multiseed/multiseed_summary.json",
-  "next_action": "Implement only the preregistered fixed-weight forecast-observation diagnostic in research/innovation_screening.md; zero-error equivalence first; at most12 scientific episodes plus6 original-baseline regression controls (18 total), no new training",
+  "next_action": "Launch the one frozen18episode pilot under independent hidden600second process-tree supervisor; stop after any gate failure; no retry or training.",
   "novelty_status": "unconfirmed; two direct-neighbor fulltexts not obtained",
   "long_training_status": "not started; decide only after bounded pilot evidence and resource review",
-  "heartbeat_hours": 2
+  "heartbeat_hours": 2,
+  "pilot_run_id": "gas-marl-20261023-forecast-pilot-01"
 }

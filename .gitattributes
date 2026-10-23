@@ -4,3 +4,5 @@
 /scripts/*multiseed*.py text eol=lf
 /tests/test_multiseed*.py text eol=lf
 /research/PROTOCOL.md text eol=lf
+/scripts/*forecast*.py text eol=lf
+/tests/test_forecast*.py text eol=lf
