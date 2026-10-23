@@ -1,0 +1,517 @@
+{
+  "status": "completed",
+  "h1": {
+    "complete": true,
+    "protocol_valid": true,
+    "supported": true,
+    "descriptive_all_seed_means_negative": true,
+    "per_seed": [
+      {
+        "seed": 0,
+        "pairs": [
+          {
+            "start": 919,
+            "difference": -0.011856579955299318,
+            "relative_change": -0.016150250351660796
+          },
+          {
+            "start": 6567,
+            "difference": -0.011801440125280283,
+            "relative_change": -0.014782640449390781
+          }
+        ],
+        "window_count": 2,
+        "mean_difference": -0.0118290100402898,
+        "strictly_negative": true
+      },
+      {
+        "seed": 1,
+        "pairs": [
+          {
+            "start": 919,
+            "difference": 0.010152624147006017,
+            "relative_change": 0.015758967436393493
+          },
+          {
+            "start": 6567,
+            "difference": -0.033561744523631476,
+            "relative_change": -0.043753368127562135
+          }
+        ],
+        "window_count": 2,
+        "mean_difference": -0.01170456018831273,
+        "strictly_negative": true
+      },
+      {
+        "seed": 2,
+        "pairs": [
+          {
+            "start": 919,
+            "difference": -0.036902482796269065,
+            "relative_change": -0.051231217033788884
+          },
+          {
+            "start": 6567,
+            "difference": -0.012381662781515868,
+            "relative_change": -0.0156526286444158
+          }
+        ],
+        "window_count": 2,
+        "mean_difference": -0.024642072788892466,
+        "strictly_negative": true
+      }
+    ],
+    "seed_mean_difference_range": [
+      -0.024642072788892466,
+      -0.01170456018831273
+    ],
+    "interpretation": "Controlled sensitivity diagnostic only; no significance, generalization or novelty claim."
+  },
+  "paired_metrics": [
+    {
+      "seed": 0,
+      "start": 6567,
+      "metrics": {
+        "renewable_energy_utilization": {
+          "zero": 0.7983309995046683,
+          "plus20": 0.7865295593793881,
+          "difference": -0.011801440125280283,
+          "relative_change": -0.014782640449390781
+        },
+        "average_bounded_slowdown": {
+          "zero": 20.31463626450649,
+          "plus20": 16.253120277979566,
+          "difference": -4.061515986526924,
+          "relative_change": -0.1999305295770006
+        },
+        "reward": {
+          "zero": 0.7577017269756554,
+          "plus20": 0.7540233188234289,
+          "difference": -0.003678408152226531,
+          "relative_change": -0.004854691524735982
+        },
+        "total_energy_j": {
+          "zero": 8766609693.0,
+          "plus20": 8615473693.0,
+          "difference": -151136000.0,
+          "relative_change": -0.017239959949475078
+        },
+        "green_energy_j": {
+          "zero": 6998656278.480003,
+          "plus20": 6776324727.599999,
+          "difference": -222331550.88000393,
+          "relative_change": -0.0317677482695708
+        },
+        "brown_energy_j": {
+          "zero": 1767953414.5199966,
+          "plus20": 1839148965.4000006,
+          "difference": 71195550.88000393,
+          "relative_change": 0.040270037827514635
+        },
+        "makespan_seconds": {
+          "zero": 1808897,
+          "plus20": 1714437,
+          "difference": -94460,
+          "relative_change": -0.05221966756537271
+        },
+        "wall_seconds": {
+          "zero": 3.422000000020489,
+          "plus20": 3.889999999955762,
+          "difference": 0.4679999999352731,
+          "relative_change": 0.13676212739113705
+        },
+        "controller_wall_seconds": {
+          "zero": 7.811999999976251,
+          "plus20": 7.782000000006519,
+          "difference": -0.029999999969732016,
+          "relative_change": -0.0038402457718667714
+        }
+      }
+    },
+    {
+      "seed": 0,
+      "start": 919,
+      "metrics": {
+        "renewable_energy_utilization": {
+          "zero": 0.7341421771879875,
+          "plus20": 0.7222855972326881,
+          "difference": -0.011856579955299318,
+          "relative_change": -0.016150250351660796
+        },
+        "average_bounded_slowdown": {
+          "zero": 13.153820977626031,
+          "plus20": 21.796574637221344,
+          "difference": 8.642753659595312,
+          "relative_change": 0.6570527053923106
+        },
+        "reward": {
+          "zero": 0.7078345352327354,
+          "plus20": 0.6786924479582455,
+          "difference": -0.02914208727448997,
+          "relative_change": -0.041170762125795506
+        },
+        "total_energy_j": {
+          "zero": 7998166753.0,
+          "plus20": 7827182753.0,
+          "difference": -170984000.0,
+          "relative_change": -0.021377898871121473
+        },
+        "green_energy_j": {
+          "zero": 5871791553.559997,
+          "plus20": 5653461369.400002,
+          "difference": -218330184.15999508,
+          "relative_change": -0.03718289080402115
+        },
+        "brown_energy_j": {
+          "zero": 2126375199.4400034,
+          "plus20": 2173721383.5999985,
+          "difference": 47346184.15999508,
+          "relative_change": 0.02226614765468674
+        },
+        "makespan_seconds": {
+          "zero": 1787679,
+          "plus20": 1680814,
+          "difference": -106865,
+          "relative_change": -0.059778629161051845
+        },
+        "wall_seconds": {
+          "zero": 3.25,
+          "plus20": 3.6560000000172295,
+          "difference": 0.40600000001722947,
+          "relative_change": 0.1249230769283783
+        },
+        "controller_wall_seconds": {
+          "zero": 7.047000000020489,
+          "plus20": 7.5939999999827705,
+          "difference": 0.5469999999622814,
+          "relative_change": 0.07762168298008955
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "start": 6567,
+      "metrics": {
+        "renewable_energy_utilization": {
+          "zero": 0.7670665359014838,
+          "plus20": 0.7335047913778523,
+          "difference": -0.033561744523631476,
+          "relative_change": -0.043753368127562135
+        },
+        "average_bounded_slowdown": {
+          "zero": 35.247639027412404,
+          "plus20": 12.495308562512916,
+          "difference": -22.752330464899487,
+          "relative_change": -0.6454994176263776
+        },
+        "reward": {
+          "zero": 0.696571257846659,
+          "plus20": 0.7085141742528265,
+          "difference": 0.011942916406167514,
+          "relative_change": 0.017145290265187185
+        },
+        "total_energy_j": {
+          "zero": 8308459293.0,
+          "plus20": 8298102493.0,
+          "difference": -10356800.0,
+          "relative_change": -0.0012465367687034053
+        },
+        "green_energy_j": {
+          "zero": 6373141088.560001,
+          "plus20": 6086697937.960001,
+          "difference": -286443150.6000004,
+          "relative_change": -0.044945364714139985
+        },
+        "brown_energy_j": {
+          "zero": 1935318204.4399986,
+          "plus20": 2211404555.039999,
+          "difference": 276086350.6000004,
+          "relative_change": 0.14265682509811786
+        },
+        "makespan_seconds": {
+          "zero": 1520753,
+          "plus20": 1514280,
+          "difference": -6473,
+          "relative_change": -0.004256444011617929
+        },
+        "wall_seconds": {
+          "zero": 3.905999999959022,
+          "plus20": 3.719000000040978,
+          "difference": -0.1869999999180436,
+          "relative_change": -0.047875063983616344
+        },
+        "controller_wall_seconds": {
+          "zero": 7.844000000040978,
+          "plus20": 7.061999999976251,
+          "difference": -0.7820000000647269,
+          "relative_change": -0.09969403366402876
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "start": 919,
+      "metrics": {
+        "renewable_energy_utilization": {
+          "zero": 0.6442442493763721,
+          "plus20": 0.6543968735233782,
+          "difference": 0.010152624147006017,
+          "relative_change": 0.015758967436393493
+        },
+        "average_bounded_slowdown": {
+          "zero": 17.705817600563595,
+          "plus20": 23.56894647164576,
+          "difference": 5.863128871082164,
+          "relative_change": 0.3311413798194518
+        },
+        "reward": {
+          "zero": 0.6088326141752449,
+          "plus20": 0.6072589805800866,
+          "difference": -0.0015736335951582747,
+          "relative_change": -0.0025846736172141457
+        },
+        "total_energy_j": {
+          "zero": 7504824353.0,
+          "plus20": 7491488353.0,
+          "difference": -13336000.0,
+          "relative_change": -0.0017769902895420902
+        },
+        "green_energy_j": {
+          "zero": 4834939932.000003,
+          "plus20": 4902406556.240002,
+          "difference": 67466624.23999882,
+          "relative_change": 0.013953973614743716
+        },
+        "brown_energy_j": {
+          "zero": 2669884420.999997,
+          "plus20": 2589081796.7599983,
+          "difference": -80802624.23999882,
+          "relative_change": -0.030264465234691486
+        },
+        "makespan_seconds": {
+          "zero": 1479340,
+          "plus20": 1471005,
+          "difference": -8335,
+          "relative_change": -0.005634269336325659
+        },
+        "wall_seconds": {
+          "zero": 3.2189999999827705,
+          "plus20": 3.5160000000032596,
+          "difference": 0.2970000000204891,
+          "relative_change": 0.09226467847843392
+        },
+        "controller_wall_seconds": {
+          "zero": 7.061999999976251,
+          "plus20": 7.687000000034459,
+          "difference": 0.6250000000582077,
+          "relative_change": 0.08850184084682944
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "start": 6567,
+      "metrics": {
+        "renewable_energy_utilization": {
+          "zero": 0.7910276965481529,
+          "plus20": 0.778646033766637,
+          "difference": -0.012381662781515868,
+          "relative_change": -0.0156526286444158
+        },
+        "average_bounded_slowdown": {
+          "zero": 26.589397054816672,
+          "plus20": 18.23735898738695,
+          "difference": -8.35203806742972,
+          "relative_change": -0.31411160058316356
+        },
+        "reward": {
+          "zero": 0.7378489024385195,
+          "plus20": 0.7421713157918631,
+          "difference": 0.0043224133533436015,
+          "relative_change": 0.00585812805177109
+        },
+        "total_energy_j": {
+          "zero": 8651592093.0,
+          "plus20": 8691665693.0,
+          "difference": 40073600.0,
+          "relative_change": 0.0046319335873941095
+        },
+        "green_energy_j": {
+          "zero": 6843648964.800003,
+          "plus20": 6767731018.679998,
+          "difference": -75917946.12000465,
+          "relative_change": -0.01109319699337081
+        },
+        "brown_energy_j": {
+          "zero": 1807943128.199997,
+          "plus20": 1923934674.3200016,
+          "difference": 115991546.12000465,
+          "relative_change": 0.06415663430491135
+        },
+        "makespan_seconds": {
+          "zero": 1735211,
+          "plus20": 1760257,
+          "difference": 25046,
+          "relative_change": 0.014433979498746839
+        },
+        "wall_seconds": {
+          "zero": 3.23499999998603,
+          "plus20": 3.75,
+          "difference": 0.5150000000139698,
+          "relative_change": 0.15919629057687598
+        },
+        "controller_wall_seconds": {
+          "zero": 7.375,
+          "plus20": 7.672000000020489,
+          "difference": 0.2970000000204891,
+          "relative_change": 0.04027118644345615
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "start": 919,
+      "metrics": {
+        "renewable_energy_utilization": {
+          "zero": 0.7203124370816822,
+          "plus20": 0.6834099542854132,
+          "difference": -0.036902482796269065,
+          "relative_change": -0.051231217033788884
+        },
+        "average_bounded_slowdown": {
+          "zero": 20.74932022312278,
+          "plus20": 27.871175133776102,
+          "difference": 7.121854910653322,
+          "relative_change": 0.3432331678373163
+        },
+        "reward": {
+          "zero": 0.6788137966354367,
+          "plus20": 0.6276676040178609,
+          "difference": -0.0511461926175758,
+          "relative_change": -0.07534642470598509
+        },
+        "total_energy_j": {
+          "zero": 8213352353.0,
+          "plus20": 8081528353.0,
+          "difference": -131824000.0,
+          "relative_change": -0.016049962833002057
+        },
+        "green_energy_j": {
+          "zero": 5916179849.999999,
+          "plus20": 5522996922.280001,
+          "difference": -393182927.71999836,
+          "relative_change": -0.06645892073750909
+        },
+        "brown_energy_j": {
+          "zero": 2297172503.000001,
+          "plus20": 2558531430.7199993,
+          "difference": 261358927.71999836,
+          "relative_change": 0.11377418429772936
+        },
+        "makespan_seconds": {
+          "zero": 1922170,
+          "plus20": 1839780,
+          "difference": -82390,
+          "relative_change": -0.04286301419749554
+        },
+        "wall_seconds": {
+          "zero": 3.452999999979511,
+          "plus20": 3.3910000000032596,
+          "difference": -0.061999999976251274,
+          "relative_change": -0.01795540109372116
+        },
+        "controller_wall_seconds": {
+          "zero": 7.657000000006519,
+          "plus20": 7.60999999998603,
+          "difference": -0.0470000000204891,
+          "relative_change": -0.006138174222338916
+        }
+      }
+    }
+  ],
+  "costs": {
+    "started_utc": "2026-10-23T12:10:56.552049+00:00",
+    "ended_utc": "2026-10-23T12:13:26.342516+00:00",
+    "total_wall_seconds": 149.78100000001723,
+    "total_process_cpu_seconds": 144.0,
+    "first_pair_cost": {
+      "episodes": 2,
+      "simulation_wall_seconds_sum": 6.922000000020489,
+      "pair_wall_seconds": 19.14000000001397,
+      "projected_18_episode_seconds": 172.26000000012573,
+      "measurement": "First original/zero pair including model/env setup, traces, gates and instrumentation."
+    },
+    "log_bytes_before_final_summary": 11298734,
+    "budget": {
+      "planned_episode_starts": 18,
+      "episode_cap": 18,
+      "timeout_seconds": 550.0,
+      "max_actions_per_episode": 4096
+    },
+    "command": [
+      "scripts/run_forecast_pilot.py",
+      "--output-dir",
+      "results/gas-marl-20261023-forecast-pilot-01",
+      "--timeout-seconds",
+      "550",
+      "--device",
+      "cuda",
+      "--num-threads",
+      "1"
+    ],
+    "simulation_wall_seconds_sum": 63.2029999999213,
+    "controller_wall_seconds_sum": 135.45300000009593,
+    "simulation_process_cpu_seconds_sum": 60.8125,
+    "controller_process_cpu_seconds_sum": 130.25,
+    "process_peak_rss_bytes": 1536405504,
+    "gpu_peak_allocated_bytes": 15123456,
+    "gpu_peak_reserved_bytes": 29360128,
+    "memory_scope": "OS process lifetime peak; per-episode allocator peak reset by runner",
+    "gpu_utilization": null,
+    "gpu_utilization_missing_reason": "No sampled utilization service; allocator bytes are not utilization",
+    "supervisor": {
+      "status": "completed",
+      "pid": 18308,
+      "started_at": "2026-10-23T12:10:54.887330+00:00",
+      "run_id": "gas-marl-20261023-forecast-pilot-01",
+      "git_commit": "1524393b1f3cf88c63185f305df119dc93436c9c",
+      "git_status": "",
+      "hard_process_timeout_seconds": 600,
+      "soft_matrix_timeout_seconds": 550,
+      "episode_cap": 18,
+      "pilot_output": "results/gas-marl-20261023-forecast-pilot-01",
+      "step": {
+        "name": "frozen-forecast-pilot",
+        "command": [
+          ".venv/Scripts/python.exe",
+          "-X",
+          "utf8",
+          "scripts/run_forecast_pilot.py",
+          "--output-dir",
+          "results/gas-marl-20261023-forecast-pilot-01",
+          "--timeout-seconds",
+          "550",
+          "--device",
+          "cuda",
+          "--num-threads",
+          "1"
+        ],
+        "cwd": "D:/Downloads/dashixiong-chaogai/green-rl-sched-main/green-rl-sched-main",
+        "status": "completed",
+        "started_at": "2026-10-23T12:10:54.975709+00:00",
+        "timeout_seconds": 600,
+        "stdout": "results/gas-marl-20261023-forecast-pilot-01-supervisor/logs/frozen-forecast-pilot.stdout.log",
+        "stderr": "results/gas-marl-20261023-forecast-pilot-01-supervisor/logs/frozen-forecast-pilot.stderr.log",
+        "pid": 30492,
+        "elapsed_seconds": 152.125,
+        "heartbeat_at": "2026-10-23T12:13:25.115864+00:00",
+        "returncode": 0,
+        "ended_at": "2026-10-23T12:13:27.117299+00:00"
+      },
+      "ended_at": "2026-10-23T12:13:27.117299+00:00"
+    }
+  },
+  "interpretation": "Six paired windows from reused baseline windows; three seed-level means. Individual windows may improve. No significance, generalization, robustness-method, or novelty claim.",
+  "protocol_valid": true,
+  "cost_rows_preserved": 18
+}

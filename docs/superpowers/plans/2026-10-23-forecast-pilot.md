@@ -50,11 +50,11 @@ Interfaces: select_windows, evaluation_seed, zero_gate, summarize_h1 and a CLI w
 ## Task 3 Scientific gate and one execution
 
 - [x] Independently review both units and confirm no baseline/config changes.
-- [ ] Freeze manifests and runtime limits before the first original/zero pair; inspect pair cost and stop on failed equivalence.
-- [ ] Complete remaining predeclared episodes only if gates and budget permit. Preserve every result and per-seed sign, with no retry grid or extra training.
+- [x] Freeze manifests and runtime limits before the first original/zero pair; inspect pair cost and stop on failed equivalence.
+- [x] Complete remaining predeclared episodes only if gates and budget permit. Preserve every result and per-seed sign, with no retry grid or extra training.
 
 ## Task 4 Evidence and decision
 
-- [ ] Audit raw rows against summary, real energy, zero gates, all eighteen episode slots and hashes.
-- [ ] Create a concise report with negative results and costs, visually verify any Word output, retain small evidence and push to the draft PR.
-- [ ] Update research state. If evidence cannot support a reasonable next research direction, state the concrete missing information, stop repeated wakeups and notify the user.
+- [x] Audit raw rows against summary, real energy, zero gates, all eighteen episode slots and hashes.
+- [x] Create a concise report with negative results and costs, visually verify any Word output and prepare small evidence for the existing draft PR.
+- [x] Update research state. Identify the two missing lawful direct-neighbor fulltexts and delete repeated wakeups; include this handoff in the user notification.

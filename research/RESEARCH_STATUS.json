@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-10-23T12:10:29.508979+00:00",
-  "phase": "forecast_pilot_ready",
+  "updated_at_utc": "2026-10-23T12:24:25Z",
+  "phase": "awaiting_direct_neighbor_fulltexts",
   "baseline_status": "three_seed_lublin_green_backfilling_verified",
   "training_seeds": [
     0,
@@ -10,9 +10,24 @@
   "active_training": null,
   "report": "reports/三种子基线验证报告_GAS_MARL.docx",
   "evidence": "research/evidence/multiseed/multiseed_summary.json",
-  "next_action": "Launch the one frozen18episode pilot under independent hidden600second process-tree supervisor; stop after any gate failure; no retry or training.",
+  "next_action": "Obtain lawful author manuscripts or authorized fulltexts of GAS-MARL-ADC (10.2139/ssrn.6530554) and SCS-RC (10.1016/j.apenergy.2026.128137); compare information, actions, constraints, uncertainty and evaluation splits before deciding on a new method.",
   "novelty_status": "unconfirmed; two direct-neighbor fulltexts not obtained",
-  "long_training_status": "not started; decide only after bounded pilot evidence and resource review",
-  "heartbeat_hours": 2,
-  "pilot_run_id": "gas-marl-20261023-forecast-pilot-01"
+  "long_training_status": "not started; do not extend the bounded pilot into further training",
+  "automatic_followup": "Heartbeat gas-marl deleted after bounded pilot delivery; awaiting specific missing literature evidence.",
+  "pilot_run_id": "gas-marl-20261023-forecast-pilot-01",
+  "pilot_status": "completed_and_independently_verified",
+  "pilot_execution_source_commit": "1524393b1f3cf88c63185f305df119dc93436c9c",
+  "pilot_episode_count": 18,
+  "pilot_zero_gates_passed": 6,
+  "pilot_report": "reports/预测偏差先导报告_GAS_MARL.docx",
+  "pilot_evidence": "research/evidence/forecast_pilot_01/proof.json",
+  "pilot_h1": {
+    "supported_in_preregistered_finite_design": true,
+    "seed_mean_reutil_delta_percentage_points": {
+      "0": -1.18290100402898,
+      "1": -1.170456018831273,
+      "2": -2.4642072788892466
+    },
+    "qualifications": "One individual window improves ReUtil; BSLD and reward trade off. Reused windows and artificial +20% forecast bias; no independent generalization or novelty claim."
+  }
 }

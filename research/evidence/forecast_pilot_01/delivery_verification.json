@@ -1,0 +1,58 @@
+{
+  "verified_at_utc": "2026-10-23T12:28:10.525994+00:00",
+  "scientific_execution_source_commit": "1524393b1f3cf88c63185f305df119dc93436c9c",
+  "scientific_episodes": 18,
+  "additional_scientific_episodes_during_analysis": 0,
+  "registered_windows": [
+    {
+      "start": 6567,
+      "iteration": 1
+    },
+    {
+      "start": 919,
+      "iteration": 3
+    }
+  ],
+  "chronology": "All six original/zero pairs precede the six plus20 episodes; exact registered ordering independently checked.",
+  "independent_audit_status": "verified",
+  "independent_audit_frozen_file_count": 84,
+  "all_preexisting_ledger_hashes_verified": 156,
+  "tests": {
+    "count": 121,
+    "seconds": 12.508,
+    "status": "passed",
+    "scope": "Full existing suite under normal Windows permissions; includes CUDA recovery and process-tree cleanup.",
+    "stdout_path": "results/forecast-pilot-delivery-tests.stdout.log",
+    "stdout_sha256": "76b8a9abecb43c3f0ea86d4e06513072d750b23e1f40cd89669efd60353b630b",
+    "stderr_path": "results/forecast-pilot-delivery-tests.stderr.log",
+    "stderr_sha256": "85f38c70ae1ef51fa7caefc021c580afc2a2dd91220989c7225fc1f38488a041"
+  },
+  "review_corrections": [
+    "Post-run independent audit now rejects alternate windows/iterations and pre-gate or reordered stress rows; actual scientific result unchanged.",
+    "A 4ms assertion against Windows 15.625ms monotonic clock resolution was replaced by a deterministic injected-clock unit test; execution code and frozen inputs unchanged."
+  ],
+  "word_qa": {
+    "pages": 3,
+    "method": "Independent hidden Word export to PDF; all three page PNGs visually inspected.",
+    "layout": "No clipping, overlap, blank pages or broken table rows observed.",
+    "local_pdf_path": "reports/_qa/forecast_pilot/baseline.pdf",
+    "local_pdf_sha256": "c9491033035719d94750c246509c584481070fa76af5e75c366f716bd5d0441f",
+    "render_manifest_sha256": "5824717d0b86524c230cdecfac71a494fa08325e3728539b9b5d118c54ed8d0c"
+  },
+  "delivery_file_sha256": {
+    "scripts/analyze_forecast_pilot.py": "b38d317e5a37ac84d9fb1c35a7b21f21db24d63f3f156739121ef67e5e9a4495",
+    "tests/test_forecast_pilot_analysis.py": "1871d3199543b244f292374f63a27ca7a28af3b1c18a9955f73ef651d381fc5a",
+    "scripts/build_forecast_report.py": "77c7a2da921fedfc192b8b1afbb5e00118636d59b677949d21d08f59576535b3",
+    "tests/test_forecast_pilot_runner.py": "9908856c6c79f830f9e80690b0552dee86e2833dff4f189bd30af116b229c99e",
+    "reports/预测偏差先导报告_GAS_MARL.docx": "a54e15ed881ba3a02607376a2424623f6fa06fcd23f7fda61d65da4bf6bc91c7",
+    "reports/预测偏差先导报告_GAS_MARL.md": "f90577fc392ea34ef7969c3d0d2219387c2a516a35753d5548a80f8832c689e2"
+  },
+  "limits": [
+    "No saved before/after full-array hash strings; equality flags and independent original-source reconstruction are distinct evidence.",
+    "Reused baseline windows; no unseen-test, significance, generalization, novelty, or robustness-method claim."
+  ],
+  "next_evidence_needed": [
+    "Lawful GAS-MARL-ADC fulltext (10.2139/ssrn.6530554)",
+    "Lawful SCS-RC fulltext (10.1016/j.apenergy.2026.128137)"
+  ]
+}

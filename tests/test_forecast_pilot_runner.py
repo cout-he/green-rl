@@ -196,16 +196,27 @@ class RunnerTests(unittest.TestCase):
         self.assertGreater(memory['rss_bytes'], 0)
         self.assertGreaterEqual(memory['peak_rss_bytes'], memory['rss_bytes'])
 
-    def test_first_pair_measures_real_runner_cost_including_episode_setup(self):
+    def test_first_pair_accounts_for_setup_using_controller_clock(self):
         with tempfile.TemporaryDirectory(dir=ROOT) as temp:
+            clock_now = [10.0]
             def episode(spec, deadline, max_actions):
-                time.sleep(.002)
-                return self.result(spec, deadline, max_actions)
+                # Advance the runner's public clock through separate setup and
+                # simulation phases. A 4ms sleep can fit entirely within one
+                # Windows GetTickCount64 tick (15.625ms), so it cannot establish
+                # this accounting contract reliably.
+                clock_now[0] += .75
+                result = self.result(spec, deadline, max_actions)
+                clock_now[0] += .125
+                result['row']['wall_seconds'] = .125
+                return result
             summary = pilot.execute_matrix(Path(temp) / 'pilot', self.manifest(), episode,
-                                           lock_path=Path(temp) / 'lock')
+                                           clock=lambda: clock_now[0], lock_path=Path(temp) / 'lock')
             cost = summary['first_pair_cost']
-            self.assertGreaterEqual(cost['pair_wall_seconds'], .004)
-            self.assertNotEqual(cost['pair_wall_seconds'], .2)
+            self.assertEqual(summary['status'], 'completed')
+            self.assertEqual(cost['episodes'], 2)
+            self.assertEqual(cost['pair_wall_seconds'], 1.75)
+            self.assertEqual(cost['simulation_wall_seconds_sum'], .25)
+            self.assertEqual(cost['projected_18_episode_seconds'], 15.75)
 
     def test_small_real_environment_zero_path_has_identical_actions_events_jobs_and_rng(self):
         from HPCSimPickJobs import HPCEnv
