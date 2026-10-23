@@ -1,0 +1,98 @@
+{
+  "experiment_id": "gas-marl-20261021-smoke-01",
+  "status": "completed",
+  "purpose": "Execution smoke test only; not a paper performance reproduction or evidence of algorithm improvement.",
+  "training": {
+    "workload": "lublin_256",
+    "backfill": 1,
+    "epochs": 1,
+    "trajectories_per_epoch": 2,
+    "jobs_per_trajectory": 256,
+    "seed": 0,
+    "delay_semantics": "author",
+    "device": "cuda"
+  },
+  "evaluation": {
+    "sequence_length": 64,
+    "sequences": 1,
+    "policies": [
+      "FCFS",
+      "F2",
+      "PPO",
+      "MARL"
+    ]
+  },
+  "source_commit": "417df4e8504de815de939166d7868fd7169b9eee",
+  "steps": [
+    {
+      "name": "smoke-lublin_256-0-MARL-train",
+      "status": "completed",
+      "returncode": 0,
+      "elapsed_seconds": 6.016
+    },
+    {
+      "name": "smoke-lublin_256-0-MaskablePPO-train",
+      "status": "completed",
+      "returncode": 0,
+      "elapsed_seconds": 6.015
+    },
+    {
+      "name": "smoke-lublin_256-0-author-evaluate",
+      "status": "completed",
+      "returncode": 0,
+      "elapsed_seconds": 6.016
+    },
+    {
+      "name": "smoke-lublin_256-0-paper-evaluate",
+      "status": "completed",
+      "returncode": 0,
+      "elapsed_seconds": 6.016
+    }
+  ],
+  "results": {
+    "author": [
+      {
+        "algorithm": "FCFS",
+        "average bounded slowdown": "3.643582215560044",
+        "renewable energy utilization": "0.34362820817191086"
+      },
+      {
+        "algorithm": "F2",
+        "average bounded slowdown": "3.598827626255931",
+        "renewable energy utilization": "0.40337878872109945"
+      },
+      {
+        "algorithm": "PPO",
+        "average bounded slowdown": "3.621190182559182",
+        "renewable energy utilization": "0.3251312477850682"
+      },
+      {
+        "algorithm": "MARL",
+        "average bounded slowdown": "8.654842815104187",
+        "renewable energy utilization": "0.5026880071482683"
+      }
+    ],
+    "paper": [
+      {
+        "algorithm": "FCFS",
+        "average bounded slowdown": "3.643582215560044",
+        "renewable energy utilization": "0.34362820817191086"
+      },
+      {
+        "algorithm": "F2",
+        "average bounded slowdown": "3.598827626255931",
+        "renewable energy utilization": "0.40337878872109945"
+      },
+      {
+        "algorithm": "PPO",
+        "average bounded slowdown": "3.621190182559182",
+        "renewable energy utilization": "0.3251312477850682"
+      },
+      {
+        "algorithm": "MARL",
+        "average bounded slowdown": "8.462003930482112",
+        "renewable energy utilization": "0.5874951769092608"
+      }
+    ]
+  }
+}

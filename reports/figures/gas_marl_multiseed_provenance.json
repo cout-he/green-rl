@@ -1,0 +1,26 @@
+{
+  "figures": {
+    "evaluation": {
+      "width_mm": 183.0,
+      "height_mm": 150.0,
+      "minimum_text_pt": 7.0
+    },
+    "training": {
+      "width_mm": 183.0,
+      "height_mm": 85.0,
+      "minimum_text_pt": 7.0
+    }
+  },
+  "matplotlib": "3.8.4",
+  "input_sha256": {
+    "research/evidence/multiseed/multiseed_summary.json": "b1592d771fb57eda701ec1569cc826beee33ee44eb3825c6ffe65d081e7cae4a",
+    "research/evidence/multiseed/training_seed0_MARL.csv": "405bf9634266e70d380b0bd966956b798f653171d62fe9000b61682245ee2210",
+    "research/evidence/multiseed/training_seed0_PPO.csv": "df1e21f3977b7cd6aba70b35c752771a360c97c3ccf1b924aab5a1b9a06f01fc",
+    "research/evidence/multiseed/training_seed1_MARL.csv": "ca2f073b511aada98002de825bf34ff3beb11d8833450508e21e41a685f55e4c",
+    "research/evidence/multiseed/training_seed1_PPO.csv": "104ac180783d492ce166cb3685c212208cc68cc913f26b402fd3f7d179fa76f8",
+    "research/evidence/multiseed/training_seed2_MARL.csv": "ed728fc251aa6eb4c9932dc032ecd8bf0f3fb7bb7c9aeb4d35e43ea06652bd00",
+    "research/evidence/multiseed/training_seed2_PPO.csv": "c53bbf392688e01a98b5a858e3d67d5475aab411f7180021d6e23da2cdfda80b"
+  },
+  "exclusions": "None within the three paired seeds. Legacy seed0 evaluation is intentionally excluded by protocol.",
+  "transformations": "BSLD sign reversed from stored training CSV; ten-window arithmetic seed means; ddof=1 seed SD; ratios and percentage-point differences shown explicitly."
+}

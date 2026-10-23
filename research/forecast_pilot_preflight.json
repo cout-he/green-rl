@@ -1,0 +1,54 @@
+{
+  "status": "preflight_passed_not_yet_executed",
+  "recorded_at_utc": "2026-10-23T12:10:29.508979+00:00",
+  "run_id": "gas-marl-20261023-forecast-pilot-01",
+  "tests": {
+    "passed": 110,
+    "failed": 0,
+    "elapsed_seconds": 11.782,
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
+    "execution": "normal Windows permissions"
+  },
+  "source_input_hashes_validated": 84,
+  "scientific_episode_starts_so_far": 0,
+  "full_episode_cap": 18,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "windows": [
+    {
+      "start": 6567,
+      "original_iteration": 1,
+      "sequence_length": 1024
+    },
+    {
+      "start": 919,
+      "original_iteration": 3,
+      "sequence_length": 1024
+    }
+  ],
+  "conditions": [
+    "original",
+    "zero",
+    "plus20"
+  ],
+  "hypothesis": "Every seed mean of ReUtil_plus20 minus ReUtil_zero is negative.",
+  "zero_gate": "exact actions/events/schedule/jobs/physical metrics/RNG; all six gates before stress",
+  "soft_timeout_seconds": 550,
+  "hard_process_timeout_seconds": 600,
+  "reviews_resolved": [
+    "Nested forecast proxies rejected",
+    "Shared .research.lock for all local experiments",
+    "Actual consumed metadata/rows and final model paths authenticated",
+    "H1 interpreted support invalidated on failed final protocol",
+    "Nonfinite and final-episode timeout checks"
+  ],
+  "measurement_notes": [
+    "Physical energy follows the original PowerStruc first-schedule to actual-completion horizon.",
+    "Arrival-based makespan and omitted initial idle-gap energy reported separately.",
+    "Candidate checks reaching backfill_check differ from all queued candidates.",
+    "GPU allocator memory is not GPU utilization; missing utilization is explicit."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "run_id": "gas-marl-20261021-baseline-01",
+  "status": "interrupted",
+  "git_commit": "478f03345f4de02175933a1c5453f80040d4efef",
+  "last_confirmed_epoch": 127,
+  "planned_epochs": 300,
+  "last_pipeline_heartbeat_at": "2026-10-21T05:19:56.716032+00:00",
+  "interruption_confirmed_at": "2026-10-21T06:34:25.841270+00:00",
+  "exit_code": null,
+  "exit_cause": "Unconfirmed external termination; no traceback or explicit exit record. No relevant reboot/sleep/crash event was found during the inspected window.",
+  "training_checkpoint_at_interruption": false,
+  "model_state_recoverable": false,
+  "raw_partial_training_csv": "research/evidence/baseline01_training_partial.csv",
+  "raw_partial_csv_sha256": "2078bc475bcfd23c7100f7c0805d23c8c0dd394a363a8bb1ea81cc03fbddfcb7",
+  "csv_columns": [
+    "reward",
+    "renewable_energy_utilization",
+    "negative_average_bounded_slowdown"
+  ],
+  "notes": [
+    "127 logged epochs do not imply a completed baseline.",
+    "Original training saved model weights only at the end; metrics cannot reconstruct parameters.",
+    "Original logs/state were retained locally and the original state was backed up before recording the interruption.",
+    "No new scheduling contribution or performance improvement follows from this engineering recovery."
+  ],
+  "recovery_actions": [
+    "Restore config only when matching the pipeline-written copy.",
+    "Back up and remove stale lock after confirming all pipeline and training processes absent.",
+    "Add atomic periodic full checkpoints and validate real CUDA continuation equivalence for both algorithms.",
+    "Start a new run from epoch zero with unchanged baseline settings using a hidden independent Windows launcher."
+  ]
+}

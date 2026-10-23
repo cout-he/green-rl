@@ -1,0 +1,94 @@
+{
+  "status": "verified",
+  "verified_at_utc": "2026-10-22T07:11:55.751795+00:00",
+  "run_id": "gas-marl-20261021-baseline-02",
+  "source_commit": "0b6541eaa2f9169e6f339c89ddab1ba65cd5b696",
+  "source_snapshot_files_verified": 23,
+  "data_files_verified": 6,
+  "all_step_exit_codes_zero": true,
+  "all_stderr_empty": true,
+  "training": {
+    "MARL": {
+      "csv_rows": 300,
+      "consecutive_epochs": 300,
+      "completed_epoch": 300,
+      "weights_equal_checkpoint": true,
+      "parameters_finite": true,
+      "csv_equals_log": true,
+      "full_state_present": true,
+      "files_sha256": {
+        "checkpoint.pt": "15bf0b487efe571269096651c6a2a282013793589141fb3853df10a10ad05752",
+        "MARL_lublin_256.csv": "405bf9634266e70d380b0bd966956b798f653171d62fe9000b61682245ee2210",
+        "_actor.pkl": "48788af87fe5dbd83c42fbe4cfaf2989f1f7e488469461383cb164fb454ecbee",
+        "_critic.pkl": "dc27a058239d431172060b7ce7da1a336542c0b073643f47422eb989b2cd59b0"
+      }
+    },
+    "PPO": {
+      "csv_rows": 300,
+      "consecutive_epochs": 300,
+      "completed_epoch": 300,
+      "weights_equal_checkpoint": true,
+      "parameters_finite": true,
+      "csv_equals_log": true,
+      "full_state_present": true,
+      "files_sha256": {
+        "actor.pkl": "6cf36ff60d0556e4a9c396ad739991eed2961477754cd2b269a0aa78e6168ae1",
+        "checkpoint.pt": "33c9c87b5b9f9cdcb708f323d960b5254c0ca812822f5562e2dd42144631076d",
+        "critic.pkl": "d6436497d2eb5a7c42fcf298f595e03c2536f86a5b24e5ffa7446eb2c7f2c381",
+        "MaskablePPO_lublin_256.csv": "df1e21f3977b7cd6aba70b35c752771a360c97c3ccf1b924aab5a1b9a06f01fc"
+      }
+    }
+  },
+  "overlapping_evaluation_window_pairs": [
+    [
+      6567,
+      7146
+    ],
+    [
+      6567,
+      6890
+    ],
+    [
+      6567,
+      6122
+    ],
+    [
+      7146,
+      6890
+    ],
+    [
+      7146,
+      8064
+    ],
+    [
+      4498,
+      5225
+    ],
+    [
+      8632,
+      8217
+    ],
+    [
+      8632,
+      8064
+    ],
+    [
+      8217,
+      8064
+    ],
+    [
+      6890,
+      6122
+    ],
+    [
+      5225,
+      6122
+    ]
+  ],
+  "original_state_sha256": "1bee49bbbfc526cea4c1ff4f4104262940d5a4f41b2fec104da1446cbb8267f9",
+  "limits": [
+    "One independent training seed.",
+    "Ten partly overlapping windows are descriptive evaluation slices, not independent training replicates.",
+    "Source snapshot verification does not claim current files remain identical after isolated evaluation fixes."
+  ]
+}

@@ -1,0 +1,29 @@
+# Research environment for Python 3.11 and NVIDIA RTX 50-series GPUs.
+# Install: .venv\Scripts\python.exe -m pip install -r requirements-research.txt
+# Upstream requirements.txt is preserved as part of the original source snapshot.
+# Select one NumPy pin: the upstream file contains conflicting 1.24.3/1.24.4 pins.
+--extra-index-url https://download.pytorch.org/whl/cu128
+gym==0.15.4
+numpy==1.24.4
+pandas==2.0.3
+scipy==1.14.1
+# PyTorch 2.7 introduced Blackwell support; upstream 2.1.1 cannot run RTX 5060.
+torch==2.7.1+cu128
+# Gym's otherwise unconstrained OpenCV must remain compatible with NumPy 1.x.
+opencv-python==4.11.0.86
+# Locked transitive dependencies from the installed, checked environment.
+cloudpickle==1.2.2
+filelock==4.2.4
+fsspec==2026.9.0
+future==1.0.0
+Jinja2==3.1.6
+MarkupSafe==3.0.4
+mpmath==1.3.0
+networkx==3.6.1
+pyglet==1.3.2
+python-dateutil==2.9.0.post0
+pytz==2026.5
+six==1.17.0
+sympy==1.14.0
+typing_extensions==4.16.0
+tzdata==2026.5

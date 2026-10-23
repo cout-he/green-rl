@@ -1,0 +1,26 @@
+{
+  "data\\Cirne.swf": {
+    "bytes": 614830,
+    "sha256": "27d9a2cc0e1d14fae6a178764abb72974769421728592afae70c3379f620a95d"
+  },
+  "data\\irradianceS.csv": {
+    "bytes": 310370,
+    "sha256": "90d228afc34ce9e78098db327cf05b58511e0855b80a687c904138280bd107c2"
+  },
+  "data\\Jann.swf": {
+    "bytes": 870289,
+    "sha256": "e310927874d3853c79289ad6b97d8b5da88d60c6bed32a017719f1edbb9892d5"
+  },
+  "data\\lublin_256.swf": {
+    "bytes": 649089,
+    "sha256": "a394ab3d81179ebcf645a1cbd593a60b6dff7f11a510e1e6285c45f43310c962"
+  },
+  "data\\power.csv": {
+    "bytes": 1167520,
+    "sha256": "ea2e0148a62d0196892f563a436ef49172c7fe1854e566c28102424332c0e02b"
+  },
+  "data\\windspeedS.csv": {
+    "bytes": 422247,
+    "sha256": "f847d446db6d1ba808088fd66b835a8451a040343e93aa8abf77b6b798f78279"
+  }
+}

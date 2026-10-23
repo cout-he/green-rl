@@ -1,6 +1,7 @@
 from job import Job, Workloads
 from cluster import Cluster
 import sys
+import os
 import copy
 import numpy as np
 import scipy.signal
@@ -50,8 +51,13 @@ def discount_cumsum(x, discount):
 
 
 class HPCEnv(gym.Env):
-    def __init__(self, backfill=False):  # do nothing and return. A workaround for passing parameters to the environment
+    def __init__(self, backfill=False, delay_semantics=None):
         super(HPCEnv, self).__init__()
+        if delay_semantics is None:
+            delay_semantics = os.environ.get('GREEN_RL_DELAY_SEMANTICS', 'author')
+        if delay_semantics not in ('author', 'paper'):
+            raise ValueError("delay_semantics must be 'author' or 'paper'")
+        self.delay_semantics = delay_semantics
         print("Initialize Simple HPC Env")
 
         self.action_space = spaces.Discrete(MAX_QUEUE_SIZE)
@@ -700,7 +706,15 @@ class HPCEnv(gym.Env):
             next_resource_release_machines = self.running_jobs[0].allocated_machines
 
             nextGreenChange = ((self.current_timestamp // 3600) + 1) * 3600
-            if self.next_arriving_job_idx < self.last_job_in_batch \
+            next_job_submit_time = sys.maxsize
+            if self.next_arriving_job_idx < self.last_job_in_batch:
+                next_job_submit_time = self.loads[self.next_arriving_job_idx].submit_time
+            # The paper mode also treats the Type 2 delay deadline as an event.
+            if self.delay_semantics == 'paper' and self.current_timestamp < skipTime < min(
+                    next_job_submit_time, next_resource_release_time, nextGreenChange):
+                self.current_timestamp = skipTime
+                self.cluster.PowerStruc.updateCurrentTime(self.current_timestamp)
+            elif self.next_arriving_job_idx < self.last_job_in_batch \
                     and self.loads[self.next_arriving_job_idx].submit_time <= min(next_resource_release_time,nextGreenChange):
                 self.current_timestamp = max(self.current_timestamp, self.loads[self.next_arriving_job_idx].submit_time)
                 self.cluster.PowerStruc.updateCurrentTime(self.current_timestamp)

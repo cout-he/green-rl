@@ -1,5 +1,38 @@
 # GAS-MARL: Green-Aware job Scheduling algorithm for HPC clusters based on Multi-Action Deep Reinforcement Learning
 
+## Reproduction project
+
+This repository preserves the authors' source at tag `upstream-import` and develops a reproducible Python/PyTorch workflow on branch `research/gas-marl-reproduction`. The original source is from https://github.com/sioncr/green-rl-sched. Please cite Chen et al. as shown below.
+
+The research setup uses Python 3.11 and an isolated `.venv`. Install the checked dependency set with `pip install -r requirements-research.txt`; the original `requirements.txt` is retained for provenance and contains conflicting NumPy pins. PyTorch is updated for the local RTX 5060, with the software/hardware deviation recorded in `research/environment.json`.
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe scripts/check_environment.py --require-cuda
+.\.venv\Scripts\python.exe scripts/run_research.py --stage smoke --device cuda
+.\.venv\Scripts\python.exe scripts/run_research.py --stage baseline --device cuda
+```
+
+`baseline` always runs the short smoke workflow first. It then trains GAS-MARL and PPO for the original 300 iterations with 100 trajectories of 256 jobs, initially on Lublin-256 with Green-Backfilling. Evaluation uses FCFS, F2, PPO, and GAS-MARL on common test starts. GA/LPTPN and other configurations remain a later expansion; this is not yet the entire paper experiment matrix.
+
+Each experiment writes isolated models, logs, source snapshots, per-sequence results, and `state.json` under `results/<run-id>/`. The latest state is linked by `research/LATEST_RUN.json`. Training uses the authors' delay semantics. Evaluation separately records `author` and `paper` modes; the latter corrects only the tested Type 2 deadline event. Evaluating an author-trained model under `paper` semantics is a behavior audit, not an independently retrained improvement claim.
+
+See `research/PROTOCOL.md` for the scientific targets, numerical anchors, and evidence rules. Local weights, environment files, and large logs are excluded from Git.
+
+The bounded three-seed Lublin-256 + Green-Backfilling baseline is now complete. The [three-seed report](reports/三种子基线验证报告_GAS_MARL.md) records all six 300-epoch trainings and comparable paired evaluations. Author-mode GAS-MARL outperforms PPO in both metrics for each seed, but differs from the published numerical anchors; this does not reproduce the full paper experiment matrix or establish an innovation. Small source data and audit evidence are in `research/evidence/multiseed/`; the earlier single-seed report is retained.
+
+Read-only checks and plots for the retained local runs:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/verify_multiseed.py --run-dir results/gas-marl-20261022-multiseed-01
+.\.venv\Scripts\python.exe scripts/analyze_multiseed.py
+.\.venv\Scripts\python.exe scripts/plot_multiseed.py
+```
+
+These commands use local artifacts; trained weights are not part of the Git repository. `verify_multiseed.py` regenerates a timestamped audit report, so the packaged ledger's derived-report hashes describe the delivery-time audit, while its model/input hashes identify immutable experimental artifacts.
+
+## Original project description
+
 GAS-MARL is a green-aware job scheduling algorithm for HPC clusters based on multi-action deep reinforcement learning, which optimizes both renewable energy utilization and average bounded slowdown. This repository contains the source code of GAS-MARL and the datasets used.
 
 ## Install
